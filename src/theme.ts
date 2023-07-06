@@ -6,20 +6,20 @@ export default function getTheme({ style, name, soft = false, black = false }: a
   // Usage: `pick({ light: "lightblue", dark: "darkblue" })`
   const pick = (options: any) => options[style]
 
-  const vitesse = (key: keyof typeof themeGroup, op = '') => pick({ light: themeGroup[key][1] + op, dark: themeGroup[key][0] + op })
+  const kzTheme = (key: keyof typeof themeGroup, op = '') => pick({ light: themeGroup[key][1] + op, dark: themeGroup[key][0] + op })
 
   const primer = getColors(style)
 
-  const foreground = black ? '#dbd7cacc' : vitesse('foreground')
-  const secondaryForeground = vitesse('secondaryForeground')
-  const activeForeground = vitesse('activeForeground')
-  const primary = vitesse('primary')
+  const foreground = black ? '#dbd7cacc' : kzTheme('foreground')
+  const secondaryForeground = kzTheme('secondaryForeground')
+  const activeForeground = kzTheme('activeForeground')
+  const primary = kzTheme('primary')
 
-  const border = soft ? vitesse('lowBorder') : vitesse('border')
-  const background = black ? '#000' : soft ? vitesse('lowBackground') : vitesse('background')
-  const activeBackground = black ? '#121212' : soft ? vitesse('lowActiveBackground') : vitesse('activeBackground')
+  const border = soft ? kzTheme('lowBorder') : kzTheme('border')
+  const background = black ? '#000' : soft ? kzTheme('lowBackground') : kzTheme('background')
+  const activeBackground = black ? '#121212' : soft ? kzTheme('lowActiveBackground') : kzTheme('activeBackground')
 
-  const punctuation = black ? vitesse('punctuation', 'cc') : vitesse('punctuation')
+  const punctuation = black ? kzTheme('punctuation', 'cc') : kzTheme('punctuation')
 
   const selectionBackgroundInActive = pick({ light: '#22222208', dark: '#eeeeee08' })
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
@@ -32,7 +32,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'focusBorder': '#00000000',
       foreground,
       'descriptionForeground': secondaryForeground,
-      'errorForeground': vitesse('red'),
+      'errorForeground': kzTheme('red'),
 
       'textLink.foreground': primary,
       'textLink.activeForeground': primary,
@@ -58,7 +58,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'input.border': border,
       'input.foreground': foreground,
       'input.placeholderForeground': secondaryForeground,
-      'inputOption.activeBackground': vitesse('ignored'),
+      'inputOption.activeBackground': kzTheme('ignored'),
 
       'badge.foreground': background,
       'badge.background': secondaryForeground,
@@ -72,7 +72,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'titleBar.border': activeBackground,
 
       'activityBar.foreground': foreground,
-      'activityBar.inactiveForeground': vitesse('ignored'),
+      'activityBar.inactiveForeground': kzTheme('ignored'),
       'activityBar.background': background,
       'activityBarBadge.foreground': background,
       'activityBarBadge.background': activeForeground,
@@ -104,9 +104,9 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'notifications.foreground': foreground,
       'notifications.background': background,
       'notifications.border': border,
-      'notificationsErrorIcon.foreground': vitesse('red'),
-      'notificationsWarningIcon.foreground': vitesse('orange'),
-      'notificationsInfoIcon.foreground': vitesse('blue'),
+      'notificationsErrorIcon.foreground': kzTheme('red'),
+      'notificationsWarningIcon.foreground': kzTheme('orange'),
+      'notificationsInfoIcon.foreground': kzTheme('blue'),
 
       'pickerGroup.border': border,
       'pickerGroup.foreground': foreground,
@@ -149,7 +149,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'editorWidget.background': background,
       'editor.foldBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
       'editor.lineHighlightBackground': activeBackground,
-      'editorLineNumber.foreground': vitesse('ignored'),
+      'editorLineNumber.foreground': kzTheme('ignored'),
       'editorLineNumber.activeForeground': activeForeground,
       'editorIndentGuide.background': pick({ light: '#00000015', dark: '#ffffff15' }),
       'editorIndentGuide.activeBackground': pick({ light: '#00000030', dark: '#ffffff30' }),
@@ -169,9 +169,9 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'diffEditor.removedTextBackground': pick({ light: '#ab595910', dark: '#ab595922' }),
 
       'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0000' }),
-      'scrollbarSlider.background': vitesse('faded'),
-      'scrollbarSlider.hoverBackground': vitesse('ignored'),
-      'scrollbarSlider.activeBackground': vitesse('ignored'),
+      'scrollbarSlider.background': kzTheme('faded'),
+      'scrollbarSlider.hoverBackground': kzTheme('ignored'),
+      'scrollbarSlider.activeBackground': kzTheme('ignored'),
       'editorOverviewRuler.border': primer.white,
 
       'panel.background': background,
@@ -184,40 +184,40 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'terminal.foreground': foreground,
       'terminal.selectionBackground': selectionBackground,
       'terminal.ansiBrightBlack': pick({ light: '#aaaaaa', dark: '#777777' }),
-      'terminal.ansiBrightBlue': vitesse('blue'),
-      'terminal.ansiBrightCyan': vitesse('cyan'),
-      'terminal.ansiBrightGreen': vitesse('green'),
-      'terminal.ansiBrightMagenta': vitesse('magenta'),
-      'terminal.ansiBrightRed': vitesse('red'),
+      'terminal.ansiBrightBlue': kzTheme('blue'),
+      'terminal.ansiBrightCyan': kzTheme('cyan'),
+      'terminal.ansiBrightGreen': kzTheme('green'),
+      'terminal.ansiBrightMagenta': kzTheme('magenta'),
+      'terminal.ansiBrightRed': kzTheme('red'),
       'terminal.ansiBrightWhite': pick({ light: '#dddddd', dark: '#ffffff' }),
-      'terminal.ansiBrightYellow': vitesse('yellow'),
+      'terminal.ansiBrightYellow': kzTheme('yellow'),
       'terminal.ansiBlack': pick({ light: themeGroup.background[0], dark: themeGroup.foreground[1] }),
-      'terminal.ansiBlue': vitesse('blue'),
-      'terminal.ansiCyan': vitesse('cyan'),
-      'terminal.ansiGreen': vitesse('green'),
-      'terminal.ansiMagenta': vitesse('magenta'),
-      'terminal.ansiRed': vitesse('red'),
+      'terminal.ansiBlue': kzTheme('blue'),
+      'terminal.ansiCyan': kzTheme('cyan'),
+      'terminal.ansiGreen': kzTheme('green'),
+      'terminal.ansiMagenta': kzTheme('magenta'),
+      'terminal.ansiRed': kzTheme('red'),
       'terminal.ansiWhite': pick({ light: themeGroup.foreground[0], dark: themeGroup.foreground[0] }),
-      'terminal.ansiYellow': vitesse('yellow'),
+      'terminal.ansiYellow': kzTheme('yellow'),
 
-      'gitDecoration.addedResourceForeground': vitesse('green'),
-      'gitDecoration.modifiedResourceForeground': vitesse('blue'),
-      'gitDecoration.deletedResourceForeground': vitesse('red'),
-      'gitDecoration.untrackedResourceForeground': vitesse('cyan'),
-      'gitDecoration.ignoredResourceForeground': vitesse('ignored'),
-      'gitDecoration.conflictingResourceForeground': vitesse('orange'),
-      'gitDecoration.submoduleResourceForeground': vitesse('secondaryForeground'),
+      'gitDecoration.addedResourceForeground': kzTheme('green'),
+      'gitDecoration.modifiedResourceForeground': kzTheme('blue'),
+      'gitDecoration.deletedResourceForeground': kzTheme('red'),
+      'gitDecoration.untrackedResourceForeground': kzTheme('cyan'),
+      'gitDecoration.ignoredResourceForeground': kzTheme('ignored'),
+      'gitDecoration.conflictingResourceForeground': kzTheme('orange'),
+      'gitDecoration.submoduleResourceForeground': kzTheme('secondaryForeground'),
 
-      'editorGutter.modifiedBackground': vitesse('blue'),
-      'editorGutter.addedBackground': vitesse('green'),
-      'editorGutter.deletedBackground': vitesse('red'),
+      'editorGutter.modifiedBackground': kzTheme('blue'),
+      'editorGutter.addedBackground': kzTheme('green'),
+      'editorGutter.deletedBackground': kzTheme('red'),
 
-      'editorBracketHighlight.foreground1': vitesse('cyan'),
-      'editorBracketHighlight.foreground2': vitesse('green'),
-      'editorBracketHighlight.foreground3': vitesse('orange'),
-      'editorBracketHighlight.foreground4': vitesse('magenta'),
-      'editorBracketHighlight.foreground5': vitesse('yellow'),
-      'editorBracketHighlight.foreground6': vitesse('blue'),
+      'editorBracketHighlight.foreground1': kzTheme('cyan'),
+      'editorBracketHighlight.foreground2': kzTheme('green'),
+      'editorBracketHighlight.foreground3': kzTheme('orange'),
+      'editorBracketHighlight.foreground4': kzTheme('magenta'),
+      'editorBracketHighlight.foreground5': kzTheme('yellow'),
+      'editorBracketHighlight.foreground6': kzTheme('blue'),
 
       'debugToolBar.background': background,
       'editor.stackFrameHighlightBackground': pick({ light: primer.yellow[1], dark: '#a707' }),
@@ -233,17 +233,17 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'welcomePage.buttonBackground': primer.gray[1],
       'welcomePage.buttonHoverBackground': primer.gray[2],
 
-      'problemsErrorIcon.foreground': vitesse('red'),
-      'problemsWarningIcon.foreground': vitesse('orange'),
-      'problemsInfoIcon.foreground': vitesse('blue'),
+      'problemsErrorIcon.foreground': kzTheme('red'),
+      'problemsWarningIcon.foreground': kzTheme('orange'),
+      'problemsInfoIcon.foreground': kzTheme('blue'),
 
-      'editorError.foreground': vitesse('red'),
-      'editorWarning.foreground': vitesse('orange'),
-      'editorInfo.foreground': vitesse('blue'),
-      'editorHint.foreground': vitesse('green'),
+      'editorError.foreground': kzTheme('red'),
+      'editorWarning.foreground': kzTheme('orange'),
+      'editorInfo.foreground': kzTheme('blue'),
+      'editorHint.foreground': kzTheme('green'),
 
-      'editorGutter.commentRangeForeground': vitesse('ignored'),
-      'editorGutter.foldingControlForeground': vitesse('secondaryForeground'),
+      'editorGutter.commentRangeForeground': kzTheme('ignored'),
+      'editorGutter.foldingControlForeground': kzTheme('secondaryForeground'),
 
       'editorInlayHint.foreground': punctuation,
       'editorInlayHint.background': '#00000000',
@@ -255,11 +255,11 @@ export default function getTheme({ style, name, soft = false, black = false }: a
     },
     semanticHighlighting: true,
     semanticTokenColors: {
-      namespace: vitesse('namespace'),
-      property: vitesse('property'),
-      interface: vitesse('interface'),
-      type: vitesse('interface'),
-      class: vitesse('class'),
+      namespace: kzTheme('namespace'),
+      property: kzTheme('property'),
+      interface: kzTheme('interface'),
+      type: kzTheme('interface'),
+      class: kzTheme('class'),
     },
     tokenColors: [
       {
@@ -269,7 +269,8 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'string.comment',
         ],
         settings: {
-          foreground: vitesse('comment'),
+          foreground: kzTheme('comment'),
+          fontStyle: 'italic',
         },
       },
       {
@@ -305,13 +306,13 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'meta.definition.variable',
         ],
         settings: {
-          foreground: vitesse('constant'),
+          foreground: kzTheme('constant'),
         },
       },
       {
         scope: ['entity', 'entity.name'],
         settings: {
-          foreground: vitesse('function'),
+          foreground: kzTheme('function'),
         },
       },
       {
@@ -326,13 +327,13 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'tag.html',
         ],
         settings: {
-          foreground: vitesse('keyword'),
+          foreground: kzTheme('keyword'),
         },
       },
       {
         scope: 'entity.name.function',
         settings: {
-          foreground: vitesse('function'),
+          foreground: kzTheme('function'),
         },
       },
       {
@@ -341,7 +342,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'storage.type.class.jsdoc',
         ],
         settings: {
-          foreground: vitesse('keyword'),
+          foreground: kzTheme('keyword'),
         },
       },
       {
@@ -353,7 +354,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'constant.language.null',
         ],
         settings: {
-          foreground: vitesse('builtin'),
+          foreground: kzTheme('builtin'),
         },
       },
       {
@@ -374,7 +375,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'attribute.value',
         ],
         settings: {
-          foreground: vitesse('string'),
+          foreground: kzTheme('string'),
         },
       },
       {
@@ -383,13 +384,13 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'punctuation.support.type.property-name',
         ],
         settings: {
-          foreground: vitesse('string', '99'),
+          foreground: kzTheme('string', '99'),
         },
       },
       {
         scope: 'support',
         settings: {
-          foreground: vitesse('property'),
+          foreground: kzTheme('property'),
         },
       },
       {
@@ -401,7 +402,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'attribute.name',
         ],
         settings: {
-          foreground: vitesse('property'),
+          foreground: kzTheme('property'),
         },
       },
       {
@@ -410,7 +411,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'invalid.deprecated.entity.other.attribute-name.html',
         ],
         settings: {
-          foreground: vitesse('variable'),
+          foreground: kzTheme('variable'),
         },
       },
       {
@@ -419,7 +420,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'identifier',
         ],
         settings: {
-          foreground: vitesse('variable'),
+          foreground: kzTheme('variable'),
         },
       },
       {
@@ -428,13 +429,13 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'entity.name.type',
         ],
         settings: {
-          foreground: vitesse('type'),
+          foreground: kzTheme('type'),
         },
       },
       {
         scope: 'namespace',
         settings: {
-          foreground: vitesse('namespace'),
+          foreground: kzTheme('namespace'),
         },
       },
       {
@@ -444,7 +445,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'meta.var.expr.ts',
         ],
         settings: {
-          foreground: vitesse('operator'),
+          foreground: kzTheme('operator'),
         },
       },
       {
@@ -493,13 +494,13 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       {
         scope: 'string variable',
         settings: {
-          foreground: vitesse('string'),
+          foreground: kzTheme('string'),
         },
       },
       {
         scope: ['source.regexp', 'string.regexp'],
         settings: {
-          foreground: vitesse('regex'),
+          foreground: kzTheme('regex'),
         },
       },
       {
@@ -510,13 +511,13 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'string.regexp string.regexp.arbitrary-repitition',
         ],
         settings: {
-          foreground: vitesse('string'),
+          foreground: kzTheme('string'),
         },
       },
       {
         scope: 'string.regexp constant.character.escape',
         settings: {
-          foreground: vitesse('yellow'),
+          foreground: kzTheme('yellow'),
         },
       },
       {
@@ -524,7 +525,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'support.constant',
         ],
         settings: {
-          foreground: vitesse('constant'),
+          foreground: kzTheme('constant'),
         },
       },
       {
@@ -533,7 +534,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'number',
         ],
         settings: {
-          foreground: vitesse('number'),
+          foreground: kzTheme('number'),
         },
       },
       {
@@ -541,7 +542,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'keyword.other.unit',
         ],
         settings: {
-          foreground: vitesse('builtin'),
+          foreground: kzTheme('builtin'),
         },
       },
       {
@@ -550,7 +551,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'constant.language',
         ],
         settings: {
-          foreground: vitesse('boolean'),
+          foreground: kzTheme('boolean'),
         },
       },
       {
@@ -562,7 +563,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       {
         scope: 'punctuation.definition.list.begin.markdown',
         settings: {
-          foreground: vitesse('orange'),
+          foreground: kzTheme('orange'),
         },
       },
       {
@@ -575,7 +576,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       {
         scope: 'markup.quote',
         settings: {
-          foreground: vitesse('interface'),
+          foreground: kzTheme('interface'),
         },
       },
       {
@@ -687,7 +688,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'punctuation.definition.string.end.markdown',
         ],
         settings: {
-          foreground: vitesse('string'),
+          foreground: kzTheme('string'),
         },
       },
       {
@@ -704,7 +705,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'type.identifier',
         ],
         settings: {
-          foreground: vitesse('class'),
+          foreground: kzTheme('class'),
         },
       },
       {
@@ -712,7 +713,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
           'entity.other.attribute-name.html.vue',
         ],
         settings: {
-          foreground: vitesse('function'),
+          foreground: kzTheme('function'),
         },
       },
       {

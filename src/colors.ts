@@ -1,7 +1,7 @@
 // [dark, light]
 export const themeGroup = {
   primary: ['#4d9375', '#1c6b48'],
-  foreground: ['#dbd7caee', '#393a34'],
+  foreground: ['#d6d6dd', '#393a34'],
   activeForeground: ['#bfbaaa', '#4e4f47'],
   secondaryForeground: ['#dedcd590', '#393a3490'],
   ignored: ['#dedcd550', '#393a3450'],
@@ -15,7 +15,7 @@ export const themeGroup = {
   lowActiveBackground: ['#292929', '#E7E5DB'],
   lowBorder: ['#252525', '#E7E5DB'],
 
-  comment: ['#758575dd', '#a0ada0'],
+  comment: ['#898989', '#a0ada0'],
   string: ['#c98a7d', '#b56959'],
   variable: ['#bd976a', '#b07d48'],
   keyword: ['#4d9375', '#1e754f'],
@@ -35,13 +35,13 @@ export const themeGroup = {
   regex: ['#c4704f', '#ab5e3f'],
 
   // colors
-  green: ['#4d9375', '#1e754f'],
-  cyan: ['#5eaab5', '#2993a3'],
-  blue: ['#6394bf', '#296aa3'],
-  red: ['#cb7676', '#ab5959'],
+  green: ['#15ac91', '#1e754f'],
+  cyan: ['#75d3ba', '#2993a3'],
+  blue: ['#4c9df3', '#296aa3'],
+  red: ['#f14c4c', '#ab5959'],
   orange: ['#d4976c', '#a65e2b'],
-  yellow: ['#e6cc77', '#bda437'],
-  magenta: ['#d9739f', '#a13865'],
+  yellow: ['#e5b95c', '#bda437'],
+  magenta: ['#e567dc', '#a13865'],
 }
 export const colors = {
   black: '#000',

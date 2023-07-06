@@ -28,6 +28,11 @@
   "contributes": {
     "themes": [
       {
+        "label": "Kriszu Dark Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/kriszu-dark-soft.json"
+      },
+      {
         "label": "Kriszu Light",
         "uiTheme": "vs",
         "path": "./themes/kriszu-light.json"
@@ -41,12 +46,8 @@
         "label": "Kriszu Light Soft",
         "uiTheme": "vs",
         "path": "./themes/kriszu-light-soft.json"
-      },
-      {
-        "label": "Kriszu Dark Soft",
-        "uiTheme": "vs-dark",
-        "path": "./themes/kriszu-dark-soft.json"
       }
+
     ]
   },
   "galleryBanner": {

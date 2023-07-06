@@ -145,7 +145,7 @@
     "terminal.ansiGreen": "#1e754f",
     "terminal.ansiMagenta": "#a13865",
     "terminal.ansiRed": "#ab5959",
-    "terminal.ansiWhite": "#dbd7caee",
+    "terminal.ansiWhite": "#d6d6dd",
     "terminal.ansiYellow": "#bda437",
     "gitDecoration.addedResourceForeground": "#1e754f",
     "gitDecoration.modifiedResourceForeground": "#296aa3",
@@ -203,7 +203,8 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#a0ada0"
+        "foreground": "#a0ada0",
+        "fontStyle": "italic"
       }
     },
     {

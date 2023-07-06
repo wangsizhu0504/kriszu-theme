@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es6",
+    "outDir": "out",
+    "lib": ["es6", "dom"],
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "rootDir": "src",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "./node_modules/vscode/vscode.d.ts",
+    "./node_modules/vscode/lib/*"
+  ],
+  "exclude": ["node_modules", "examples"]
+}

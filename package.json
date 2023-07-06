@@ -1,0 +1,89 @@
+{
+  "publisher": "wangsizhu0504",
+  "name": "kriszu-theme",
+  "displayName": "Kriszu VScode",
+  "version": "1.0.3",
+  "description": "custom vitesse theme and add some snippets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangsizhu0504/kriszu-theme"
+  },
+  "keywords": [
+    "theme",
+    "vitesse",
+    "light",
+    "icons",
+    "dark"
+  ],
+  "categories": [
+    "Snippets",
+    "Themes",
+    "Other"
+  ],
+  "main": "./dist/extension",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "preview": true,
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Kriszu Light",
+        "uiTheme": "vs",
+        "path": "./themes/kriszu-light.json"
+      },
+      {
+        "label": "Kriszu Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/kriszu-dark.json"
+      },
+      {
+        "label": "Kriszu Light Soft",
+        "uiTheme": "vs",
+        "path": "./themes/kriszu-light-soft.json"
+      },
+      {
+        "label": "Kriszu Dark Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/kriszu-dark-soft.json"
+      }
+    ]
+  },
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "scripts": {
+    "build": "esno src/index.ts",
+    "dev": "nodemon --watch src -e ts --exec \"esno src/index.ts\"",
+    "vscode:prepublish": "npm run build",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "test": "vsce package",
+    "release": "bumpp --all && vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@kriszu/eslint-config": "^1.0.14",
+    "@types/color": "^3.0.3",
+    "@types/node": "^18.16.7",
+    "@types/vscode": "~1.51.0",
+    "color": "^4.2.3",
+    "esbuild": "^0.17.15",
+    "eslint": "^8.40.0",
+    "esno": "^0.16.3",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4",
+    "vsce": "^2.15.0",
+    "vscode-test": "^1.6.1"
+  }
+}

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import MegioButton from './MegioButton.vue'
+
 const str = '123'
 const num = 123
 const bool = false
@@ -18,6 +20,7 @@ fun()
 <template>
   <div>
     test
+    <MegioButton />
   </div>
 </template>
 

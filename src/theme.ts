@@ -92,7 +92,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'list.activeSelectionForeground': foreground,
       'list.hoverBackground': activeBackground,
       'list.inactiveSelectionBackground': activeBackground,
-      'list.activeSelectionBackground': activeBackground,
+      'list.activeSelectionBackground': pick({ light: '#22222208', dark: '#eeeeee08' }),
       'list.inactiveFocusBackground': background,
       'list.focusBackground': activeBackground,
       'list.highlightForeground': primary,
@@ -488,7 +488,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       {
         scope: 'message.error',
         settings: {
-          foreground: primer.red[7],
+          foreground: primer.red[3],
         },
       },
       {

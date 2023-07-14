@@ -1,6 +1,6 @@
 // [dark, light]
 export const themeGroup = {
-  primary: ['#4d9375', '#1c6b48'],
+  primary: ['#6AA1FF', '#165DFF'],
   foreground: ['#d6d6dd', '#393a34'],
   activeForeground: ['#bfbaaa', '#4e4f47'],
   secondaryForeground: ['#dedcd590', '#393a3490'],

@@ -6,16 +6,16 @@
     "foreground": "#393a34",
     "descriptionForeground": "#393a3490",
     "errorForeground": "#ab5959",
-    "textLink.foreground": "#1c6b48",
-    "textLink.activeForeground": "#1c6b48",
+    "textLink.foreground": "#165DFF",
+    "textLink.activeForeground": "#165DFF",
     "textBlockQuote.background": "#ffffff",
     "textBlockQuote.border": "#f0f0f0",
     "textCodeBlock.background": "#ffffff",
     "textPreformat.foreground": "#6b7785",
     "textSeparator.foreground": "#c9cdd4",
-    "button.background": "#1c6b48",
+    "button.background": "#165DFF",
     "button.foreground": "#ffffff",
-    "button.hoverBackground": "#1c6b48",
+    "button.hoverBackground": "#165DFF",
     "checkbox.background": "#f7f7f7",
     "checkbox.border": "#c9cdd4",
     "dropdown.background": "#ffffff",
@@ -29,7 +29,7 @@
     "inputOption.activeBackground": "#393a3450",
     "badge.foreground": "#ffffff",
     "badge.background": "#393a3490",
-    "progressBar.background": "#1c6b48",
+    "progressBar.background": "#165DFF",
     "titleBar.activeForeground": "#4e4f47",
     "titleBar.activeBackground": "#ffffff",
     "titleBar.inactiveForeground": "#86909c",
@@ -40,7 +40,7 @@
     "activityBar.background": "#ffffff",
     "activityBarBadge.foreground": "#ffffff",
     "activityBarBadge.background": "#4e4f47",
-    "activityBar.activeBorder": "#1c6b48",
+    "activityBar.activeBorder": "#165DFF",
     "activityBar.border": "#f0f0f0",
     "sideBar.foreground": "#4e4f47",
     "sideBar.background": "#ffffff",
@@ -54,10 +54,10 @@
     "list.activeSelectionForeground": "#393a34",
     "list.hoverBackground": "#f7f7f7",
     "list.inactiveSelectionBackground": "#f7f7f7",
-    "list.activeSelectionBackground": "#f7f7f7",
+    "list.activeSelectionBackground": "#22222208",
     "list.inactiveFocusBackground": "#ffffff",
     "list.focusBackground": "#f7f7f7",
-    "list.highlightForeground": "#1c6b48",
+    "list.highlightForeground": "#165DFF",
     "tree.indentGuidesStroke": "#e5e6eb",
     "notificationCenterHeader.foreground": "#86909c",
     "notificationCenterHeader.background": "#ffffff",
@@ -125,7 +125,7 @@
     "editorOverviewRuler.border": "#fff",
     "panel.background": "#ffffff",
     "panel.border": "#f0f0f0",
-    "panelTitle.activeBorder": "#1c6b48",
+    "panelTitle.activeBorder": "#165DFF",
     "panelTitle.activeForeground": "#393a34",
     "panelTitle.inactiveForeground": "#86909c",
     "panelInput.border": "#e5e6eb",
@@ -169,7 +169,7 @@
     "peekViewEditor.background": "#ffffff",
     "peekViewResult.background": "#ffffff",
     "settings.headerForeground": "#393a34",
-    "settings.modifiedItemIndicator": "#1c6b48",
+    "settings.modifiedItemIndicator": "#165DFF",
     "welcomePage.buttonBackground": "#f2f3f5",
     "welcomePage.buttonHoverBackground": "#e5e6eb",
     "problemsErrorIcon.foreground": "#ab5959",
@@ -425,7 +425,7 @@
     {
       "scope": "message.error",
       "settings": {
-        "foreground": "#A1151E"
+        "foreground": "#F98981"
       }
     },
     {
@@ -497,7 +497,7 @@
     {
       "scope": "meta.module-reference",
       "settings": {
-        "foreground": "#1c6b48"
+        "foreground": "#165DFF"
       }
     },
     {
@@ -513,7 +513,7 @@
       ],
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#1c6b48"
+        "foreground": "#165DFF"
       }
     },
     {
@@ -539,7 +539,7 @@
     {
       "scope": "markup.raw",
       "settings": {
-        "foreground": "#1c6b48"
+        "foreground": "#165DFF"
       }
     },
     {
@@ -949,7 +949,7 @@
     },
     {
       "token": "message.error",
-      "foreground": "A1151E"
+      "foreground": "F98981"
     },
     {
       "token": "string variable",
@@ -1009,7 +1009,7 @@
     },
     {
       "token": "meta.module-reference",
-      "foreground": "1c6b48"
+      "foreground": "165DFF"
     },
     {
       "token": "punctuation.definition.list.begin.markdown",
@@ -1017,11 +1017,11 @@
     },
     {
       "token": "markup.heading",
-      "foreground": "1c6b48"
+      "foreground": "165DFF"
     },
     {
       "token": "markup.heading entity.name",
-      "foreground": "1c6b48"
+      "foreground": "165DFF"
     },
     {
       "token": "markup.quote",
@@ -1037,7 +1037,7 @@
     },
     {
       "token": "markup.raw",
-      "foreground": "1c6b48"
+      "foreground": "165DFF"
     },
     {
       "token": "markup.deleted",

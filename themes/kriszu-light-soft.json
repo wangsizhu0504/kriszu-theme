@@ -2,7 +2,7 @@
   "name": "Kriszu Light Soft",
   "base": "vs",
   "colors": {
-    "focusBorder": "#00000000",
+    "focusBorder": "#ffffff3f",
     "foreground": "#393a34",
     "descriptionForeground": "#393a3490",
     "errorForeground": "#ab5959",
@@ -193,7 +193,7 @@
     "property": "#998418",
     "interface": "#2e808f",
     "type": "#2e808f",
-    "class": "#5a6aa6"
+    "class": "#b5855c"
   },
   "tokenColors": [
     {
@@ -203,7 +203,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#a0ada0",
+        "foreground": "#0000004f",
         "fontStyle": "italic"
       }
     },
@@ -240,7 +240,7 @@
         "meta.definition.variable"
       ],
       "settings": {
-        "foreground": "#a65e2b"
+        "foreground": "#c7792b"
       }
     },
     {
@@ -264,7 +264,7 @@
         "tag.html"
       ],
       "settings": {
-        "foreground": "#1e754f"
+        "foreground": "#c05386"
       }
     },
     {
@@ -279,7 +279,7 @@
         "storage.type.class.jsdoc"
       ],
       "settings": {
-        "foreground": "#1e754f"
+        "foreground": "#c05386"
       }
     },
     {
@@ -312,7 +312,7 @@
         "attribute.value"
       ],
       "settings": {
-        "foreground": "#b56959"
+        "foreground": "#377961"
       }
     },
     {
@@ -321,7 +321,7 @@
         "punctuation.support.type.property-name"
       ],
       "settings": {
-        "foreground": "#b5695999"
+        "foreground": "#37796199"
       }
     },
     {
@@ -348,7 +348,7 @@
         "invalid.deprecated.entity.other.attribute-name.html"
       ],
       "settings": {
-        "foreground": "#b07d48"
+        "foreground": "#6b588e"
       }
     },
     {
@@ -357,7 +357,7 @@
         "identifier"
       ],
       "settings": {
-        "foreground": "#b07d48"
+        "foreground": "#6b588e"
       }
     },
     {
@@ -431,7 +431,7 @@
     {
       "scope": "string variable",
       "settings": {
-        "foreground": "#b56959"
+        "foreground": "#377961"
       }
     },
     {
@@ -451,7 +451,7 @@
         "string.regexp string.regexp.arbitrary-repitition"
       ],
       "settings": {
-        "foreground": "#b56959"
+        "foreground": "#377961"
       }
     },
     {
@@ -465,7 +465,7 @@
         "support.constant"
       ],
       "settings": {
-        "foreground": "#a65e2b"
+        "foreground": "#c7792b"
       }
     },
     {
@@ -474,7 +474,7 @@
         "number"
       ],
       "settings": {
-        "foreground": "#2f798a"
+        "foreground": "#c7792b"
       }
     },
     {
@@ -637,7 +637,7 @@
         "punctuation.definition.string.end.markdown"
       ],
       "settings": {
-        "foreground": "#b56959"
+        "foreground": "#377961"
       }
     },
     {
@@ -654,7 +654,7 @@
         "type.identifier"
       ],
       "settings": {
-        "foreground": "#5a6aa6"
+        "foreground": "#b5855c"
       }
     },
     {
@@ -677,15 +677,15 @@
   "rules": [
     {
       "token": "comment",
-      "foreground": "a0ada0"
+      "foreground": "0000004f"
     },
     {
       "token": "punctuation.definition.comment",
-      "foreground": "a0ada0"
+      "foreground": "0000004f"
     },
     {
       "token": "string.comment",
-      "foreground": "a0ada0"
+      "foreground": "0000004f"
     },
     {
       "token": "delimiter.bracket",
@@ -761,19 +761,19 @@
     },
     {
       "token": "constant",
-      "foreground": "a65e2b"
+      "foreground": "c7792b"
     },
     {
       "token": "entity.name.constant",
-      "foreground": "a65e2b"
+      "foreground": "c7792b"
     },
     {
       "token": "variable.language",
-      "foreground": "a65e2b"
+      "foreground": "c7792b"
     },
     {
       "token": "meta.definition.variable",
-      "foreground": "a65e2b"
+      "foreground": "c7792b"
     },
     {
       "token": "entity",
@@ -789,11 +789,11 @@
     },
     {
       "token": "entity.name.tag",
-      "foreground": "1e754f"
+      "foreground": "c05386"
     },
     {
       "token": "tag.html",
-      "foreground": "1e754f"
+      "foreground": "c05386"
     },
     {
       "token": "entity.name.function",
@@ -801,11 +801,11 @@
     },
     {
       "token": "keyword",
-      "foreground": "1e754f"
+      "foreground": "c05386"
     },
     {
       "token": "storage.type.class.jsdoc",
-      "foreground": "1e754f"
+      "foreground": "c05386"
     },
     {
       "token": "storage",
@@ -845,23 +845,23 @@
     },
     {
       "token": "string",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "string punctuation.section.embedded source",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "attribute.value",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "punctuation.definition.string",
-      "foreground": "b5695999"
+      "foreground": "37796199"
     },
     {
       "token": "punctuation.support.type.property-name",
-      "foreground": "b5695999"
+      "foreground": "37796199"
     },
     {
       "token": "support",
@@ -889,19 +889,19 @@
     },
     {
       "token": "entity.other.attribute-name",
-      "foreground": "b07d48"
+      "foreground": "6b588e"
     },
     {
       "token": "invalid.deprecated.entity.other.attribute-name.html",
-      "foreground": "b07d48"
+      "foreground": "6b588e"
     },
     {
       "token": "variable",
-      "foreground": "b07d48"
+      "foreground": "6b588e"
     },
     {
       "token": "identifier",
-      "foreground": "b07d48"
+      "foreground": "6b588e"
     },
     {
       "token": "support.type.primitive",
@@ -953,7 +953,7 @@
     },
     {
       "token": "string variable",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "source.regexp",
@@ -965,19 +965,19 @@
     },
     {
       "token": "string.regexp.character-class",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "string.regexp constant.character.escape",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "string.regexp source.ruby.embedded",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "string.regexp string.regexp.arbitrary-repitition",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "string.regexp constant.character.escape",
@@ -985,15 +985,15 @@
     },
     {
       "token": "support.constant",
-      "foreground": "a65e2b"
+      "foreground": "c7792b"
     },
     {
       "token": "constant.numeric",
-      "foreground": "2f798a"
+      "foreground": "c7792b"
     },
     {
       "token": "number",
-      "foreground": "2f798a"
+      "foreground": "c7792b"
     },
     {
       "token": "keyword.other.unit",
@@ -1125,19 +1125,19 @@
     },
     {
       "token": "constant.other.reference.link",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "string.other.link",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "punctuation.definition.string.begin.markdown",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "punctuation.definition.string.end.markdown",
-      "foreground": "b56959"
+      "foreground": "377961"
     },
     {
       "token": "markup.underline.link.markdown",
@@ -1145,7 +1145,7 @@
     },
     {
       "token": "type.identifier",
-      "foreground": "5a6aa6"
+      "foreground": "b5855c"
     },
     {
       "token": "entity.other.attribute-name.html.vue",

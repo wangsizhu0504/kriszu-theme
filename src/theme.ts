@@ -29,55 +29,55 @@ export default function getTheme({ style, name, soft = false, black = false }: a
     name,
     base: pick({ light: 'vs', dark: 'vs-dark' }),
     colors: {
-      'focusBorder': '#00000000',
-      foreground,
-      'descriptionForeground': secondaryForeground,
-      'errorForeground': kzTheme('red'),
+      'focusBorder': '#ffffff3f', // 聚焦元素的整体边框颜色。仅当未被组件覆盖时才使用此颜色
+      foreground, // 整体前景色。仅当未被组件覆盖时才使用此颜色
+      'descriptionForeground': secondaryForeground, // 提供附加信息（例如标签）的描述文本的前景色
+      'errorForeground': kzTheme('red'), // 错误消息的整体前景色（此颜色仅在未被组件覆盖时使用）。
 
-      'textLink.foreground': primary,
-      'textLink.activeForeground': primary,
-      'textBlockQuote.background': background,
-      'textBlockQuote.border': border,
-      'textCodeBlock.background': background,
-      'textPreformat.foreground': primer.gray[6],
-      'textSeparator.foreground': primer.gray[3],
+      'textLink.foreground': primary, // 文本中链接的前景色
+      'textLink.activeForeground': primary, // 单击和鼠标悬停时文本中链接的前景色
+      'textBlockQuote.background': background, // 文本中块引号的背景颜色
+      'textBlockQuote.border': border, // 文本中块引号的边框颜色。
+      'textCodeBlock.background': background, // 文本中代码块的背景颜色。
+      'textPreformat.foreground': primer.gray[6], // 预格式化文本段的前景色。
+      'textSeparator.foreground': primer.gray[3], // 文本分隔符的颜色。
 
-      'button.background': primary,
-      'button.foreground': background,
-      'button.hoverBackground': primary,
+      'button.background': primary, // 按钮背景颜色
+      'button.foreground': background, // 按钮前景色
+      'button.hoverBackground': primary, // 按钮悬停时的背景颜色
 
-      'checkbox.background': activeBackground,
-      'checkbox.border': pick({ light: primer.gray[3], dark: primer.gray[1] }),
+      'checkbox.background': activeBackground, // 复选框小部件的背景颜色。
+      'checkbox.border': pick({ light: primer.gray[3], dark: primer.gray[1] }), // 复选框小部件的边框颜色。
 
-      'dropdown.background': background,
-      'dropdown.border': border,
-      'dropdown.foreground': foreground,
-      'dropdown.listBackground': activeBackground,
+      'dropdown.background': background, // 下拉背景。
+      'dropdown.border': border, // 下拉边框。
+      'dropdown.foreground': foreground, // 下拉前景
+      'dropdown.listBackground': activeBackground, // 下拉列表背景
 
-      'input.background': activeBackground,
-      'input.border': border,
-      'input.foreground': foreground,
-      'input.placeholderForeground': secondaryForeground,
-      'inputOption.activeBackground': kzTheme('ignored'),
+      'input.background': activeBackground, // 输入框背景。
+      'input.border': border, // 输入框边框
+      'input.foreground': foreground, // 输入框前景
+      'input.placeholderForeground': secondaryForeground, // 占位符文本的输入框前景色
+      'inputOption.activeBackground': kzTheme('ignored'), // 输入字段中激活选项的背景颜色。
 
-      'badge.foreground': background,
-      'badge.background': secondaryForeground,
+      'badge.foreground': background, // 徽章前景色
+      'badge.background': secondaryForeground, // 徽章背景色
 
-      'progressBar.background': primary,
+      'progressBar.background': primary, // 长时间运行操作时显示的进度条的背景颜色
 
-      'titleBar.activeForeground': activeForeground,
-      'titleBar.activeBackground': background,
-      'titleBar.inactiveForeground': primer.gray[5],
-      'titleBar.inactiveBackground': background,
-      'titleBar.border': activeBackground,
+      'titleBar.activeForeground': activeForeground, // 窗口处于活动状态时标题栏前景
+      'titleBar.activeBackground': background, // 窗口处于活动状态时标题栏背景
+      'titleBar.inactiveForeground': primer.gray[5], // 窗口非活动状态时的标题栏前景
+      'titleBar.inactiveBackground': background, // 窗口非活动状态时的标题栏背景
+      'titleBar.border': activeBackground, // 标题栏边框颜色
 
-      'activityBar.foreground': foreground,
-      'activityBar.inactiveForeground': kzTheme('ignored'),
-      'activityBar.background': background,
-      'activityBarBadge.foreground': background,
-      'activityBarBadge.background': activeForeground,
-      'activityBar.activeBorder': primary,
-      'activityBar.border': border,
+      'activityBar.foreground': foreground, // 活动栏前景色（例如用于图标）
+      'activityBar.inactiveForeground': kzTheme('ignored'), // 活动栏项目处于非活动状态时的前景色
+      'activityBar.background': background, // 活动栏背景颜色
+      'activityBarBadge.foreground': background, // 活动通知徽章前景色
+      'activityBarBadge.background': activeForeground, // 活动通知徽章背景色
+      'activityBar.activeBorder': primary, // Activity Bar 活动指示器边框颜色
+      'activityBar.border': border, // 活动栏与侧栏的边框颜色。
 
       'sideBar.foreground': activeForeground,
       'sideBar.background': background,

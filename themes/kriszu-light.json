@@ -90,7 +90,7 @@
     "tab.unfocusedHoverBackground": "#ffffff",
     "tab.border": "#f0f0f0",
     "tab.unfocusedActiveBorderTop": "#f0f0f0",
-    "tab.activeBorder": "#f0f0f0",
+    "tab.activeBorder": "#165DFF",
     "tab.unfocusedActiveBorder": "#f0f0f0",
     "tab.activeBorderTop": "#393a3490",
     "breadcrumb.foreground": "#86909c",

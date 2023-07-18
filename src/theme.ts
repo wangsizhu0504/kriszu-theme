@@ -25,6 +25,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
   const selectionBackgroundActive = pick({ light: '#22222215', dark: '#eeeeee15' })
   const selectionBackground = pick({ light: '#22222215', dark: '#eeeeee15' })
 
+  // https://code.visualstudio.com/api/references/theme-color
   const theme = {
     name,
     base: pick({ light: 'vs', dark: 'vs-dark' }),
@@ -55,7 +56,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'dropdown.listBackground': activeBackground, // 下拉列表背景
 
       'input.background': activeBackground, // 输入框背景。
-      'input.border': border, // 输入框边框
+      'input.border': kzTheme('border'), // 输入框边框
       'input.foreground': foreground, // 输入框前景
       'input.placeholderForeground': secondaryForeground, // 占位符文本的输入框前景色
       'inputOption.activeBackground': kzTheme('ignored'), // 输入字段中激活选项的背景颜色。
@@ -77,7 +78,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'activityBarBadge.foreground': background, // 活动通知徽章前景色
       'activityBarBadge.background': activeForeground, // 活动通知徽章背景色
       'activityBar.activeBorder': primary, // Activity Bar 活动指示器边框颜色
-      'activityBar.border': border, // 活动栏与侧栏的边框颜色。
+      'activityBar.border': kzTheme('border'), // 活动栏与侧栏的边框颜色。
 
       'sideBar.foreground': activeForeground,
       'sideBar.background': background,
@@ -134,7 +135,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'tab.unfocusedHoverBackground': background,
       'tab.border': border,
       'tab.unfocusedActiveBorderTop': border,
-      'tab.activeBorder': border,
+      'tab.activeBorder': primary,
       'tab.unfocusedActiveBorder': border,
       'tab.activeBorderTop': secondaryForeground,
 
@@ -175,7 +176,7 @@ export default function getTheme({ style, name, soft = false, black = false }: a
       'editorOverviewRuler.border': primer.white,
 
       'panel.background': background,
-      'panel.border': border,
+      'panel.border': kzTheme('border'),
       'panelTitle.activeBorder': primary,
       'panelTitle.activeForeground': foreground,
       'panelTitle.inactiveForeground': primer.gray[5],

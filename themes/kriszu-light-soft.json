@@ -678,6 +678,53 @@
       "settings": {
         "fontStyle": "normal"
       }
+    },
+    {
+      "name": "分号、逗号",
+      "scope": [
+        "punctuation.separator.comma",
+        "punctuation.terminator.expression",
+        "punctuation.terminator.statement",
+        "punctuation.terminator.rule.scss",
+        "meta.property-list.scss",
+        "meta.property-list.scss",
+        "meta.property-list.scss",
+        "source.css.scss"
+      ],
+      "settings": {
+        "foreground": "#b2b6bf"
+      }
+    },
+    {
+      "name": "CSS/SCSS 关键字",
+      "scope": [
+        "keyword.control.at-rule"
+      ],
+      "settings": {
+        "foreground": "#E13EDB"
+      }
+    },
+    {
+      "name": "this 关键字",
+      "scope": [
+        "variable.language.this"
+      ],
+      "settings": {
+        "foreground": "#a4329f"
+      }
+    },
+    {
+      "name": "注释/函数参数 斜体",
+      "scope": [
+        "comment",
+        "entity.name.variable.parameter",
+        "meta.at-rule.function variable",
+        "meta.at-rule.mixin variable",
+        "variable.parameter"
+      ],
+      "settings": {
+        "fontStyle": "italic"
+      }
     }
   ],
   "rules": [
@@ -1159,6 +1206,61 @@
     },
     {
       "token": "invalid.illegal.unrecognized-tag.html"
+    },
+    {
+      "token": "punctuation.separator.comma",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "punctuation.terminator.expression",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "punctuation.terminator.statement",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "punctuation.terminator.rule.scss",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "meta.property-list.scss",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "meta.property-list.scss",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "meta.property-list.scss",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "source.css.scss",
+      "foreground": "b2b6bf"
+    },
+    {
+      "token": "keyword.control.at-rule",
+      "foreground": "E13EDB"
+    },
+    {
+      "token": "variable.language.this",
+      "foreground": "a4329f"
+    },
+    {
+      "token": "comment"
+    },
+    {
+      "token": "entity.name.variable.parameter"
+    },
+    {
+      "token": "meta.at-rule.function variable"
+    },
+    {
+      "token": "meta.at-rule.mixin variable"
+    },
+    {
+      "token": "variable.parameter"
     }
   ]
 }

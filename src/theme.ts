@@ -15,7 +15,6 @@ export default function getTheme({
     pick({ light: themeGroup[key][1] + op, dark: themeGroup[key][0] + op });
 
   const primer = getColors(style);
-
   const foreground = black ? "#dbd7cacc" : kzTheme("foreground");
   const secondaryForeground = kzTheme("secondaryForeground");
   const activeForeground = kzTheme("activeForeground");
@@ -49,6 +48,7 @@ export default function getTheme({
 
   // https://code.visualstudio.com/api/references/theme-color
   const theme = {
+    "$schema": "vscode://schemas/color-theme",
     name,
     base: pick({ light: "vs", dark: "vs-dark" }),
     colors: {
@@ -111,6 +111,7 @@ export default function getTheme({
       "sideBarSectionHeader.background": background,
       "sideBarSectionHeader.border": border,
 
+      // List and trees
       "list.hoverForeground": foreground,
       "list.inactiveSelectionForeground": foreground,
       "list.activeSelectionForeground": foreground,
@@ -813,6 +814,16 @@ export default function getTheme({
         ],
         settings: {
           fontStyle: "italic",
+        },
+      },
+      {
+        name: "delete",
+        scope: [
+          "keyword.operator.expression.delete.ts",
+        ],
+        settings: {
+          fontStyle: "italic",
+          foreground: primer.red[3],
         },
       },
     ],

@@ -1,14 +1,4 @@
-import { darken, lighten } from "./utils";
-function generateColorsByBase(base: string) {
-  const darkens = Array.from({ length: 5 })
-    .map((_, i) => darken(base, (i + 1) / 10))
-    .reverse();
-  const lightens = Array.from({ length: 5 }).map((_, i) =>
-    lighten(base, (i + 1) / 10)
-  );
-  // 从暗到亮
-  return [...darkens, base, ...lightens];
-}
+
 // [dark, light]
 export const themeGroup = {
   primary: ["#6AA1FF", "#165DFF"],
@@ -29,11 +19,11 @@ export const themeGroup = {
 
   default: ["#dddddd", "#333333"],
   variable: ["#a0a5d6", "#6b588e"],
-  keyword: ["#ed9cc2", "#c05386"],
+  keyword: ["#ce8e6d", "#c05386"],
   number: ["#f6c177", "#c7792b"],
-  constant: ["#f6c177", "#c7792b"],
+  constant: ["#c77dbb", "#861194"],
   parameter: ["#a0a5d6", "#6b588e"],
-  function: ["#5fb5be", "#668f9a"],
+  function: ["#57a8f5", "#006279"],
   string: ["#74ccaa", "#377961"],
   class: ["#f3a580", "#b5855c"],
   operator: ["#ffffff5f", "#0000005f"],
@@ -61,15 +51,99 @@ export const themeGroup = {
 };
 
 export const colors = {
-  gray: generateColorsByBase("#a9aeb8"),
-  blue: generateColorsByBase("#4080FF"),
-  green: generateColorsByBase("#23C343"),
-  yellow: generateColorsByBase("#FBE842"),
-  orange: generateColorsByBase("#FF9A2E"),
-  red: generateColorsByBase("#F76560"),
-  purple: generateColorsByBase("#8D4EDA"),
-  pink: generateColorsByBase("#E13EDB"),
-
-  black: "#000",
-  white: "#fff",
+  black: '#000',
+  white: '#fff',
+  gray: [
+    '#f7f8fa',
+    '#f2f3f5',
+    '#e5e6eb',
+    '#c9cdd4',
+    '#a9aeb8',
+    '#86909c',
+    '#6b7785',
+    '#4e5969',
+    '#272e3b',
+    '#1d2129'],
+  blue: [
+    '#E8F3FF',
+    '#BEDAFF',
+    '#94BFFF',
+    '#6AA1FF',
+    '#4080FF',
+    '#165DFF',
+    '#0E42D2',
+    '#072CA6',
+    '#031A79',
+    '#000D4D'],
+  green: [
+    '#E8FFEA',
+    '#AFF0B5',
+    '#7BE188',
+    '#4CD263',
+    '#23C343',
+    '#00B42A',
+    '#009A29',
+    '#008026',
+    '#006622',
+    '#004D1C',
+  ],
+  yellow: [
+    '#FEFFE8',
+    '#FEFEBE',
+    '#FDFA94',
+    '#FCF26B',
+    '#FBE842',
+    '#FADC19',
+    '#CFAF0F',
+    '#A38408',
+    '#785D03',
+    '#4D3800',
+  ],
+  orange: [
+    '#FFF7E8',
+    '#FFE4BA',
+    '#FFCF8B',
+    '#FFB65D',
+    '#FF9A2E',
+    '#FF7D00',
+    '#D25F00',
+    '#A64500',
+    '#792E00',
+    '#4D1B00'],
+  red: [
+    '#FFECE8',
+    '#FDCDC5',
+    '#FBACA3',
+    '#F98981',
+    '#F76560',
+    '#F53F3F',
+    '#CB272D',
+    '#A1151E',
+    '#770813',
+    '#4D000A',
+  ],
+  purple: [
+    '#F5E8FF',
+    '#DDBEF6',
+    '#C396ED',
+    '#A871E3',
+    '#8D4EDA',
+    '#722ED1',
+    '#551DB0',
+    '#3C108F',
+    '#27066E',
+    '#16004D',
+  ],
+  pink: [
+    '#FFE8FB',
+    '#F7BAEF',
+    '#F08EE6',
+    '#E865DF',
+    '#E13EDB',
+    '#D91AD9',
+    '#B010B6',
+    '#8A0993',
+    '#650370',
+    '#42004D',
+  ],
 };

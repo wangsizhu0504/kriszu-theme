@@ -1,37 +1,42 @@
-import { promises as fs } from 'node:fs'
+import process from 'node:process'
+import fs from 'fs-extra'
 import getTheme from './theme'
 
 fs.mkdir('./themes', { recursive: true })
   .then(() => Promise.all([
-    fs.writeFile(
+    fs.writeJSON(
       './themes/kriszu-light.json',
-      `${JSON.stringify(getTheme({
-        style: 'light',
+      getTheme({
+        color: 'light',
         name: 'Kriszu Light',
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/kriszu-dark.json',
-      `${JSON.stringify(getTheme({
-        style: 'dark',
+      getTheme({
+        color: 'dark',
         name: 'Kriszu Dark',
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/kriszu-light-soft.json',
-      `${JSON.stringify(getTheme({
-        style: 'light',
+      getTheme({
+        color: 'light',
         name: 'Kriszu Light Soft',
         soft: true,
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
-    fs.writeFile(
+    fs.writeJSON(
       './themes/kriszu-dark-soft.json',
-      `${JSON.stringify(getTheme({
-        style: 'dark',
+      getTheme({
+        color: 'dark',
         name: 'Kriszu Dark Soft',
         soft: true,
-      }), null, 2)}\n`,
+      }),
+      { spaces: 2 },
     ),
   ]))
   .catch(() => process.exit(1))

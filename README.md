@@ -35,4 +35,4 @@ This project is based on [vitesse](https://github.com/antfu/vitesse).
 
 ## License
 
-MIT - Copyright (c) 2023 Kriszu 
+MIT - Copyright (c) 2023 Kriszu

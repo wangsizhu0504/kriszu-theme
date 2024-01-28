@@ -3,7 +3,7 @@
   "name": "kriszu-theme",
   "displayName": "Kriszu VScode",
   "type": "module",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "custom vitesse theme",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
     "themes"
   ],
   "engines": {
-    "vscode": "^1.73.0"
+    "vscode": "^1.85.0"
   },
   "preview": true,
   "contributes": {
@@ -68,10 +68,10 @@
     "@kriszu/eslint-config": "^3.1.9",
     "@types/color": "^3.0.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.11.7",
+    "@types/node": "^20.11.9",
     "@types/vscode": "~1.85.0",
     "color": "^4.2.3",
-    "esbuild": "^0.19.12",
+    "esbuild": "^0.20.0",
     "eslint": "^8.56.0",
     "esno": "^4.0.0",
     "fs-extra": "^11.2.0",

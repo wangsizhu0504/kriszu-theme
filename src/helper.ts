@@ -1,4 +1,6 @@
-import { palette, themeColor } from './colors'
+import { themeColor } from './colors'
+import type { VscodeTokenRule } from './interface'
+import { palette } from './palette'
 
 export interface GetThemeOptions {
   color: 'light' | 'dark'
@@ -13,31 +15,34 @@ export function toArray<T>(arr: T | T[]): T[] {
   return [arr]
 }
 
-export function getPaletteColors(style: 'light' | 'dark'): typeof palette {
-  if (style === 'dark') {
-    /* The array of light to dark colors are reversed to auto-generate dark theme */
-    const darkColors: any = {}
-    Object.entries(palette).forEach(([name, val]) => {
-      if (name === 'black')
-        darkColors.white = val
-
-      else if (name === 'white')
-        darkColors.black = val
-
-      else
-        darkColors[name] = [...toArray(val)].reverse()
-    })
-    return darkColors
+export function getPaletteColors(color: 'light' | 'dark'): Record<string, string> {
+  const darkColors: any = {
+    black: '#000000',
+    white: '#ffffff',
   }
-  else {
-    return palette
-  }
+  Object.entries(palette).forEach(([name, val]) => {
+    darkColors[name] = val[color]
+  })
+  return darkColors
 }
 
 function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
+export function getRuleToken(name: string, scope: string[], foreground: string, fontStyle?: string): VscodeTokenRule {
+  const settings: VscodeTokenRule['settings'] = {
+    foreground,
+  }
+  if (fontStyle)
+    settings.fontStyle = fontStyle
+
+  return {
+    name,
+    scope,
+    settings,
+  }
+}
 export function createThemeHelpers({ color, soft = false, black = false }: GetThemeOptions) {
   const pick = (options: { light: string, dark: string }) => options[color]
 

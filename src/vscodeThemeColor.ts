@@ -51,9 +51,15 @@ export class VscodeThemeColorGenerator {
       // 部件（例如编辑器内的查找/替换）的边框颜色。
       'widget.border': '',
       // 部件（例如编辑器内的查找/替换）的阴影颜色。
-      'widget.shadow': '#00000033',
+      'widget.shadow': this.pick({
+        dark: '#00000033',
+        light: '#00000019',
+      }),
       // 工作台中文本选择的背景颜色（适用于输入字段或文本区域，不适用于编辑器和终端内的选择）。
-      'selection.background': '#444444',
+      'selection.background': this.pick({
+        dark: '#444444',
+        light: '#26966a4f',
+      }),
       // 描述文本的前景色，提供额外的信息，例如标签的描述。
       'descriptionForeground': this.v('secondaryForeground'),
       // 错误消息的整体前景色（如果没有被组件覆盖，则使用此颜色）。
@@ -61,7 +67,7 @@ export class VscodeThemeColorGenerator {
       // 工作台中图标的默认颜色。
       'icon.foreground': '',
       // 可拖动分割条的悬停边框颜色。
-      'sash.hoverBorder': '#ff8787',
+      'sash.hoverBorder': this.v('primary'),
     })
     return this
   }
@@ -111,7 +117,10 @@ export class VscodeThemeColorGenerator {
   registerActionColors(): this {
     return this.addColors<VSCodeColor.ActionColor>({
       // 鼠标悬停在工具栏操作上时的背景颜色。
-      'toolbar.hoverBackground': '#444444',
+      'toolbar.hoverBackground': this.pick({
+        dark: '#444444',
+        light: '#00000010',
+      }),
       // 鼠标悬停在工具栏操作上时的轮廓颜色。
       'toolbar.hoverOutline': '',
       // 鼠标按住工具栏操作时的背景颜色。
@@ -147,7 +156,10 @@ export class VscodeThemeColorGenerator {
       // 复选框部件的前景颜色。
       'checkbox.foreground': '',
       // 复选框部件的边框颜色。
-      'checkbox.border': this.pick({ light: this.palette.gray[3], dark: this.palette.gray[1] }),
+      'checkbox.border': this.pick({
+        light: this.palette.gray[3],
+        dark: this.palette.gray[1],
+      }),
       // 当复选框所在的元素被选中时，复选框部件的背景颜色。
       'checkbox.selectBackground': '',
       // 当复选框所在的元素被选中时，复选框部件的边框颜色。
@@ -191,9 +203,15 @@ export class VscodeThemeColorGenerator {
       // 输入字段中已激活选项的背景颜色。
       'inputOption.activeBackground': this.v('ignored'),
       // 输入字段中已激活选项的边框颜色。
-      'inputOption.activeBorder': '#777777',
+      'inputOption.activeBorder': this.pick({
+        light: '#777777',
+        dark: this.v('secondary'),
+      }),
       // 输入字段中已激活选项的前景颜色。
-      'inputOption.activeForeground': '#ffffff',
+      'inputOption.activeForeground': this.pick({
+        dark: '#ffffff',
+        light: '#444444',
+      }),
       // 输入字段中已激活选项的鼠标悬停背景色。
       'inputOption.hoverBackground': '',
       // 错误严重性的输入验证背景颜色。
@@ -224,7 +242,10 @@ export class VscodeThemeColorGenerator {
   registerScrollbarControl() {
     return this.addColors<VSCodeColor.ScrollbarControl>({
       // 滚动条滑块的阴影，用于指示滚动视图。
-      'scrollbar.shadow': this.pick({ light: '#6a737d33', dark: '#0000' }),
+      'scrollbar.shadow': this.pick({
+        light: '#6a737d33',
+        dark: '#0000',
+      }),
       // 点击时滚动条滑块的背景颜色。
       'scrollbarSlider.activeBackground': this.v('ignored'),
       // 滚动条滑块的背景颜色。
@@ -273,15 +294,21 @@ export class VscodeThemeColorGenerator {
       // 当列表/树处于活动状态时，所选项的图标前景颜色。活动的列表/树具有键盘焦点，非活动的列表/树没有。
       'list.activeSelectionIconForeground': '',
       // 使用鼠标移动项目时，列表/树的拖放背景。
-      'list.dropBackground': '#ffffff12',
+      'list.dropBackground': this.pick({
+        dark: '#ffffff1f',
+        light: '#00000008',
+      }),
       // 当列表/树处于活动状态时，聚焦项的背景颜色。
       'list.focusBackground': this.v('activeBackground'),
       // 当列表/树处于活动状态时，聚焦项的前景颜色。活动的列表/树具有键盘焦点，非活动的列表/树没有。
       'list.focusForeground': '',
       // 在列表/树内搜索时，活动聚焦项上匹配高亮的前景颜色。
-      'list.focusHighlightForeground': '#66b395',
+      'list.focusHighlightForeground': this.v('secondary'),
       // 当列表/树处于活动状态时，聚焦项的轮廓颜色。活动的列表/树具有键盘焦点，非活动的列表/树没有。
-      'list.focusOutline': '#ffffff12',
+      'list.focusOutline': this.pick({
+        dark: '#ffffff12',
+        light: this.v('secondary'),
+      }),
       // 当列表/树处于活动状态且已选中时，聚焦项的轮廓颜色。活动的列表/树具有键盘焦点，非活动的列表/树没有。
       'list.focusAndSelectionOutline': '',
       // 在列表/树内搜索时，匹配项的前景颜色高亮。
@@ -315,9 +342,12 @@ export class VscodeThemeColorGenerator {
       // 当列表/树内搜索时，类型过滤器的阴影颜色。
       'listFilterWidget.shadow': '',
       // 在列表/树中过滤的匹配项的背景颜色。
-      'list.filterMatchBackground': '#66b39530',
+      'list.filterMatchBackground': this.pick({
+        dark: '#66b39530',
+        light: '#26966a30',
+      }),
       // 在列表/树中过滤的匹配项的边框颜色。
-      'list.filterMatchBorder': '#66b395',
+      'list.filterMatchBorder': this.v('secondary'),
       // 对于被弱化的列表/树项，列表/树的前景颜色。
       'list.deemphasizedForeground': '',
       // 树小部件的缩进指南线条颜色。
@@ -414,15 +444,24 @@ export class VscodeThemeColorGenerator {
   registerMinimap() {
     return this.addColors<VSCodeColor.Minimap>({
       // 在文件中搜索的匹配项的高亮颜色。
-      'minimap.findMatchHighlight': '#66b3959f',
+      'minimap.findMatchHighlight': this.pick({
+        dark: '#66b3959f',
+        light: '#26966a9f',
+      }),
       // 编辑器选择的高亮颜色。
       'minimap.selectionHighlight': '#7098d49f',
       // 编辑器内错误的高亮颜色。
-      'minimap.errorHighlight': '#ff8787',
+      'minimap.errorHighlight': this.pick({
+        dark: '#ff8787',
+        light: '#e38181',
+      }),
       // 编辑器内警告的高亮颜色。
       'minimap.warningHighlight': '',
       // 迷你地图的背景颜色。
-      'minimap.background': '#292929',
+      'minimap.background': this.pick({
+        dark: '#292929',
+        light: '#ffffff',
+      }),
       // 重复的编辑器选择的迷你地图标记颜色。
       'minimap.selectionOccurrenceHighlight': '',
       // 在迷你地图中呈现的前景元素的不透明度。例如，"#000000c0"将以75%的不透明度呈现元素。
@@ -431,11 +470,20 @@ export class VscodeThemeColorGenerator {
       'minimap.infoHighlight': '',
 
       // 迷你地图滑块的背景颜色。
-      'minimapSlider.background': '#ffffff12',
+      'minimapSlider.background': this.pick({
+        dark: '#ffffff12',
+        light: '#00000010',
+      }),
       // 当悬停时，迷你地图滑块的背景颜色。
-      'minimapSlider.hoverBackground': '#ffffff2f',
+      'minimapSlider.hoverBackground': this.pick({
+        dark: '#ffffff2f',
+        light: '#00000019',
+      }),
       // 点击时，迷你地图滑块的背景颜色。
-      'minimapSlider.activeBackground': '#ffffff3f',
+      'minimapSlider.activeBackground': this.pick({
+        dark: '#ffffff3f',
+        light: '#00000029',
+      }),
 
       // 添加内容的迷你地图边栏颜色。
       'minimapGutter.addedBackground': '',
@@ -571,15 +619,30 @@ export class VscodeThemeColorGenerator {
         dark: '#1c6b4810',
       }),
 
-      'editorCursor.foreground': '#ff8787',
-      'editor.selectionHighlightBorder': '#ffffff3f',
-      'editor.findMatchHighlightBorder': '#66b3955f',
-      'editor.findMatchBorder': '#66b395',
-      'searchEditor.findMatchBorder': '#66b395',
-      'editor.hoverHighlightBackground': '#ffffff10',
-      'editorLink.activeForeground': '#ff8787',
-      'editorInlayHint.foreground': this.v('punctuation'),
-      'editorInlayHint.background': '#00000000',
+      'editorCursor.foreground': this.v('primary'),
+      'editor.selectionHighlightBorder': this.pick({
+        dark: '#ffffff3f',
+        light: '#00000029',
+      }),
+      'editor.findMatchHighlightBorder': this.pick({
+        dark: '#66b3955f',
+        light: '#26966a4f',
+      }),
+      'editor.findMatchBorder': this.v('secondary'),
+      'searchEditor.findMatchBorder': this.v('secondary'),
+      'editor.hoverHighlightBackground': this.pick({
+        dark: '#ffffff10',
+        light: '#00000010',
+      }),
+      'editorLink.activeForeground': this.v('primary'),
+      'editorInlayHint.foreground': this.pick({
+        dark: '#ffffff6f',
+        light: this.v('secondary'),
+      }),
+      'editorInlayHint.background': this.pick({
+        dark: '#ffffff10',
+        light: this.v('secondary', '2f'),
+      }),
       'editorBracketMatch.background': this.pick({
         light: '#1c6b4820',
         dark: '#4d937520',
@@ -683,7 +746,10 @@ export class VscodeThemeColorGenerator {
       'editor.linkedEditingBackground': '',
 
       // 编辑器 CodeLens 的前景颜色。
-      'editorCodeLens.foreground': '#666666',
+      'editorCodeLens.foreground': this.pick({
+        dark: '#666666',
+        light: '#999999',
+      }),
       // 用于灯泡操作图标的颜色。
       'editorLightBulb.foreground': '',
       // 用于灯泡自动修复操作图标的颜色。
@@ -826,17 +892,29 @@ export class VscodeThemeColorGenerator {
 
       // 插入的文本的背景颜色。颜色不能是不透明的，以免隐藏底层装饰。
       'diffEditor.insertedTextBackground': this.pick({
-        light: '#1c6b4815',
-        dark: '#4d937522',
+        light: '#26966a20',
+        dark: '#66b39530',
       }),
       'diffEditor.removedTextBackground': this.pick({
-        light: '#ab595910',
-        dark: '#ab595922',
+        light: '#e3818120',
+        dark: '#ff878730',
       }),
-      'diffEditor.border': '#ffffff12',
-      'diffEditor.diagonalFill': '#ffffff12',
-      'diffEditor.insertedLineBackground': '#66b39530',
-      'diffEditor.removedLineBackground': '#ff878730',
+      'diffEditor.border': this.pick({
+        light: '#0000001a',
+        dark: '#ff878730',
+      }),
+      'diffEditor.diagonalFill': this.pick({
+        light: '#00000010',
+        dark: '#ff878730',
+      }),
+      'diffEditor.insertedLineBackground': this.pick({
+        light: '#66b39530',
+        dark: '#26966a20',
+      }),
+      'diffEditor.removedLineBackground': this.pick({
+        light: '#e3818120',
+        dark: '#ff878730',
+      }),
 
       // 插入的文本的轮廓颜色。
       'diffEditor.insertedTextBorder': '',
@@ -874,8 +952,14 @@ export class VscodeThemeColorGenerator {
   registerEditorWidgetColors() {
     return this.addColors<VSCodeColor.EditorWidgetColors>({
       'editorWidget.background': this.v('background'),
-      'editorSuggestWidget.background': '#202020',
-      'editorSuggestWidget.selectedBackground': '#333333',
+      'editorSuggestWidget.background': this.pick({
+        light: '#fbfbfb',
+        dark: '#202020',
+      }),
+      'editorSuggestWidget.selectedBackground': this.pick({
+        light: '#f6f6f6',
+        dark: '#333333',
+      }),
       'editorStickyScroll.background': this.v('activeBackground'),
       'editorStickyScrollHover.background': this.v('activeBackground'),
 
@@ -953,10 +1037,19 @@ export class VscodeThemeColorGenerator {
       // peek 视图编辑器的背景颜色。
       'peekViewEditor.background': this.v('background'),
       'peekViewResult.background': this.v('background'),
-      'peekView.border': '#666666',
-      'peekViewEditor.matchHighlightBorder': '#66b395',
-      'peekViewResult.selectionBackground': '#66b3953f',
-      'peekViewTitle.background': '#333333',
+      'peekView.border': this.pick({
+        dark: '#666666',
+        light: '#cccccc',
+      }),
+      'peekViewEditor.matchHighlightBorder': this.v('secondary'),
+      'peekViewResult.selectionBackground': this.pick({
+        dark: '#66b3953f',
+        light: '#26966a3f',
+      }),
+      'peekViewTitle.background': this.pick({
+        dark: '#333333',
+        light: '#fafafc',
+      }),
 
       // peek 视图编辑器中 gutter 的背景颜色。
       'peekViewEditorGutter.background': '',
@@ -982,9 +1075,15 @@ export class VscodeThemeColorGenerator {
   registerMergeConflictsColors() {
     return this.addColors<VSCodeColor.MergeConflictsColors>({
       // 冲突解决中当前头部的背景颜色。颜色不能是不透明的，以免隐藏底层装饰。
-      'merge.currentHeaderBackground': '#66b3957f',
+      'merge.currentHeaderBackground': this.pick({
+        dark: '#66b3957f',
+        light: '#26966a7f',
+      }),
       // 冲突解决中当前内容的背景颜色。颜色不能是不透明的，以免隐藏底层装饰。
-      'merge.currentContentBackground': '#66b3953f',
+      'merge.currentContentBackground': this.pick({
+        dark: '#66b3953f',
+        light: '#26966a3f',
+      }),
       // 冲突解决中传入头部的背景颜色。颜色不能是不透明的，以免隐藏底层装饰。
       'merge.incomingHeaderBackground': '#7098d47f',
       // 冲突解决中传入内容的背景颜色。颜色不能是不透明的，以免隐藏底层装饰。
@@ -1092,7 +1191,10 @@ export class VscodeThemeColorGenerator {
       // 状态栏突出显示项的背景颜色。
       'statusBarItem.prominentBackground': this.v('activeBackground'),
       // 当未打开文件夹时，状态栏的前景色。
-      'statusBar.noFolderForeground': '#999999',
+      'statusBar.noFolderForeground': this.pick({
+        dark: '#999999',
+        light: '#444444',
+      }),
       // 当未打开文件夹时，状态栏的背景颜色。
       'statusBar.noFolderBackground': this.v('background'),
       // 键盘导航焦点在状态栏上时的状态栏边框颜色。状态栏显示在窗口底部。
@@ -1183,9 +1285,15 @@ export class VscodeThemeColorGenerator {
       // 菜单栏中选定菜单项的边框颜色。
       'menubar.selectionBorder': '',
       // 菜单项的前景色。
-      'menu.foreground': '#cccccc',
+      'menu.foreground': this.pick({
+        dark: '#cccccc',
+        light: '#444444',
+      }),
       // 菜单项的背景颜色。
-      'menu.background': '#181818',
+      'menu.background': this.pick({
+        dark: '#181818',
+        light: '#f9f9fb',
+      }),
       // 菜单中分隔符菜单项的颜色。
       'menu.separatorBackground': this.v('border'),
       // 菜单中选定菜单项的前景色。
@@ -1213,15 +1321,24 @@ export class VscodeThemeColorGenerator {
       // 命令中心的背景颜色。
       'commandCenter.background': '',
       // 命令中心的活动背景颜色。
-      'commandCenter.activeBackground': '#ffffff10',
+      'commandCenter.activeBackground': this.pick({
+        dark: '#ffffff10',
+        light: '#00000019',
+      }),
       // 命令中心的边框颜色。
-      'commandCenter.border': '#ffffff2a',
+      'commandCenter.border': this.pick({
+        dark: '#ffffff2a',
+        light: '#00000010',
+      }),
       // 窗口处于非活动状态时命令中心的前景色。
       'commandCenter.inactiveForeground': '',
       // 窗口处于非活动状态时命令中心的边框颜色。
       'commandCenter.inactiveBorder': '',
       // 命令中心的活动边框颜色。
-      'commandCenter.activeBorder': '',
+      'commandCenter.activeBorder': this.pick({
+        dark: '#ffffff2a',
+        light: '#00000019',
+      }),
       // 当程序正在进行调试时的命令中心背景颜色。
       'commandCenter.debuggingBackground': '',
     })
@@ -1266,9 +1383,15 @@ export class VscodeThemeColorGenerator {
   registerBannerColors() {
     return this.addColors<VSCodeColor.BannerColors>({
       // Banner的背景颜色。
-      'banner.background': '#444444',
+      'banner.background': this.pick({
+        dark: '#444444',
+        light: '#f9f9fb',
+      }),
       // Banner的前景颜色。
-      'banner.foreground': '#ffffff',
+      'banner.foreground': this.pick({
+        light: '#444444',
+        dark: '#ffffff',
+      }),
       // Banner文本前面图标的颜色。
       'banner.iconForeground': '',
     })
@@ -1394,7 +1517,7 @@ export class VscodeThemeColorGenerator {
       }),
       'terminal.ansiYellow': this.v('yellow'),
       // 面板中终端选项卡侧边的边框。默认为'tab.activeBorder'。
-      'terminal.tab.activeBorder': '#66b395',
+      'terminal.tab.activeBorder': this.v('secondary'),
 
       // 在终端中分隔分栏的边框颜色。默认为panel.border。
       'terminal.border': '',

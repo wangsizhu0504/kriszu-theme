@@ -1,5 +1,5 @@
 import type { GetThemeOptions } from './helper'
-import { createThemeHelpers } from './helper'
+import { createThemeHelpers, getRuleToken } from './helper'
 import { toArray } from './utils'
 import { VscodeThemeColorGenerator } from './vscodeThemeColor'
 
@@ -9,13 +9,11 @@ export default function getTheme(options: GetThemeOptions) {
     v,
     paletteColor,
   } = createThemeHelpers(options)
-
   const themeColors = new VscodeThemeColorGenerator({
     v,
     pick,
     palette: paletteColor,
   })
-
   // https://code.visualstudio.com/api/references/theme-color
   const theme = {
     $schema: 'vscode://schemas/color-theme',
@@ -29,189 +27,164 @@ export default function getTheme(options: GetThemeOptions) {
       interface: v('interface'),
       type: v('interface'),
       class: v('class'),
-      newOperator: '#ed9cc2',
-      stringLiteral: '#74ccaa',
-      customLiteral: '#f6c177',
-      numberLiteral: '#f6c177',
+      newOperator: pick({
+        dark: '#ed9cc2',
+        light: '#c05386',
+      }),
+      stringLiteral: pick({
+        dark: '#74ccaa',
+        light: '#377961',
+      }),
+      customLiteral: pick({
+        dark: '#f6c177',
+        light: '#c7792b',
+      }),
+      numberLiteral: pick({
+        dark: '#f6c177',
+        light: '#c7792b',
+      }),
     },
     tokenColors: [
-      {
-        scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
-        settings: {
-          foreground: v('comment'),
-          fontStyle: 'italic',
-        },
-      },
-      {
-        scope: [
-          'delimiter.bracket',
-          'delimiter',
-          'invalid.illegal.character-not-allowed-here.html',
-          'keyword.operator.rest',
-          'keyword.operator.spread',
-          'keyword.operator.type.annotation',
-          'keyword.operator.relational',
-          'keyword.operator.assignment',
-          'meta.brace',
-          'meta.tag.block.any.html',
-          'meta.tag.inline.any.html',
-          'meta.tag.structure.input.void.html',
-          'meta.type.annotation',
-          'meta.embedded.block.github-actions-expression',
-          'storage.type.function.arrow',
-          'keyword.operator.type',
-          'meta.objectliteral.ts',
-          'punctuation',
-        ],
-        settings: {
-          foreground: v('punctuation'),
-        },
-      },
-      {
-        scope: [
-          'constant',
-          'entity.name.constant',
-          'variable.language',
-          'meta.definition.variable',
-        ],
-        settings: {
-          foreground: v('constant'),
-        },
-      },
-      {
-        scope: ['entity', 'entity.name'],
-        settings: {
-          foreground: v('function'),
-        },
-      },
-      {
-        scope: 'variable.parameter.function',
-        settings: {
-          foreground: v('foreground'),
-        },
-      },
-      {
-        scope: ['entity.name.tag', 'tag.html'],
-        settings: {
-          foreground: v('keyword'),
-        },
-      },
-      {
-        scope: 'entity.name.function',
-        settings: {
-          foreground: v('function'),
-        },
-      },
-      {
-        scope: ['keyword', 'storage.type.class.jsdoc'],
-        settings: {
-          foreground: v('keyword'),
-        },
-      },
-      {
-        scope: [
-          'storage',
-          'storage.type',
-          'support.type.builtin',
-          'constant.language.undefined',
-          'constant.language.null',
-        ],
-        settings: {
-          foreground: v('builtin'),
-        },
-      },
-      {
-        scope: [
-          'text.html.derivative',
-          'storage.modifier.package',
-          'storage.modifier.import',
-          'storage.type.java',
-        ],
-        settings: {
-          foreground: v('foreground'),
-        },
-      },
-      {
-        scope: [
-          'string',
-          'string punctuation.section.embedded source',
-          'attribute.value',
-        ],
-        settings: {
-          foreground: v('string'),
-        },
-      },
-      {
-        scope: [
-          'punctuation.definition.string',
-          'punctuation.support.type.property-name',
-        ],
-        settings: {
-          foreground: v('string', '99'),
-        },
-      },
-      {
-        scope: 'support',
-        settings: {
-          foreground: v('property'),
-        },
-      },
-      {
-        scope: [
-          'property',
-          'meta.property-name',
-          'meta.object-literal.key',
-          'entity.name.tag.yaml',
-          'attribute.name',
-        ],
-        settings: {
-          foreground: v('property'),
-        },
-      },
-      {
-        scope: [
-          'entity.other.attribute-name',
-          'invalid.deprecated.entity.other.attribute-name.html',
-        ],
-        settings: {
-          foreground: v('variable'),
-        },
-      },
-      {
-        scope: ['variable', 'identifier'],
-        settings: {
-          foreground: v('variable'),
-        },
-      },
-      {
-        scope: ['support.type.primitive', 'entity.name.type'],
-        settings: {
-          foreground: v('type'),
-        },
-      },
-      {
-        scope: 'namespace',
-        settings: {
-          foreground: v('namespace'),
-        },
-      },
-      {
-        scope: [
-          'keyword.operator',
-          'keyword.operator.assignment.compound',
-          'meta.var.expr.ts',
-        ],
-        settings: {
-          foreground: v('operator'),
-        },
-      },
-      {
-        scope: 'invalid.broken',
-        settings: {
-          fontStyle: 'italic',
-          foreground: paletteColor.red[7],
-        },
-      },
+      /* String */
+      getRuleToken('String', [
+        'string',
+        'string punctuation.section.embedded source',
+        'attribute.value',
+      ], v('string')),
+      /* Number */
+      getRuleToken('Number', ['constant.numeric'], v('number')),
+      getRuleToken('Boolean', ['constant.language.boolean'], v('boolean')),
+      getRuleToken('Namespace', ['namespace'], v('namespace')),
+      getRuleToken('Identifier', [
+        'variable',
+        'identifier',
+        'support.variable',
+        'support.class',
+        'support.constant',
+        'meta.definition.variable entity.name.function',
+      ], v('variable')),
+
+      getRuleToken('Keywords', [
+        'keyword',
+        'storage.type.class.jsdoc ',
+        'modifier',
+        'variable.language.this',
+        'support.type.object',
+        'constant.language',
+      ], v('keyword')),
+
+      getRuleToken('Function', ['variable.function'], v('function')),
+      getRuleToken('Function call', ['entity.name.function', 'support.function'], v('function')),
+      getRuleToken('Storage', [
+        'storage',
+        'storage.type',
+        'storage.modifier',
+        'support.type.builtin',
+        'constant.language.undefined',
+        'constant.language.null',
+      ], v('builtin')),
+      getRuleToken('Modules', ['support.module', 'support.node'], v('variable'), 'italic'),
+      getRuleToken('Type', ['support.type', 'entity.name.type', 'entity.other.inherited-class', 'support.type.primitive', 'entity.name.type'], v('type')),
+      getRuleToken('Comment', ['comment', 'punctuation.definition.comment', 'string.comment'], v('comment'), 'italic'),
+      /* Class */
+      getRuleToken('Class', ['entity.name.type.class'], v('class'), 'underline'),
+      getRuleToken('Class variable', ['variable.object.property', 'meta.field.declaration entity.name.function'], v('parameter')),
+      getRuleToken('Class method', ['meta.definition.method entity.name.function'], v('function')),
+
+      getRuleToken('Function definition', ['meta.function entity.name.function'], v('function')),
+      getRuleToken('Function call', ['meta.function-call entity.name.function'], v('function')),
+      getRuleToken('Constant', [
+        'constant',
+        'entity.name.constant',
+        'variable.language',
+        'meta.definition.variable',
+      ], v('constant')),
+      getRuleToken('Template expression', [
+        'template.expression.begin',
+        'template.expression.end',
+        'punctuation.definition.template-expression.begin',
+        'punctuation.definition.template-expression.end',
+      ], v('regex')),
+      getRuleToken('YAML Key', ['entity.name.tag.yaml'], v('variable')),
+
+      // JSON
+      getRuleToken('JSON key', [
+        'meta.object-literal.key',
+        'meta.object-literal.key string',
+        'support.type.property-name.json',
+      ], v('variable')),
+      getRuleToken('JSON constant', ['constant.language.json'], v('constant')),
+
+      /* CSS */
+      getRuleToken('CSS tag', ['entity.name.tag'], v('keyword')),
+      getRuleToken('CSS class', ['entity.other.attribute-name.class'], v('class')),
+      getRuleToken('CSS id', ['entity.other.attribute-name.id'], v('interface')),
+
+      /* HTML */
+      getRuleToken('HTML tag outline', ['meta.tag', 'punctuation.definition.tag'], v('keyword')),
+      getRuleToken('HTML tag inner', ['entity.name.tag', 'tag.html'], v('type')),
+      getRuleToken('HTML attribute', [
+        'entity.other.attribute-name',
+        'invalid.deprecated.entity.other.attribute-name.html',
+      ], v('variable')),
+
+      /* punctuation */
+      getRuleToken('punctuation', [
+        'delimiter.bracket',
+        'delimiter',
+        'invalid.illegal.character-not-allowed-here.html',
+        'keyword.operator.rest',
+        'keyword.operator.spread',
+        'keyword.operator.type.annotation',
+        'keyword.operator.relational',
+        'keyword.operator.assignment',
+        'meta.brace',
+        'meta.tag.block.any.html',
+        'meta.tag.inline.any.html',
+        'meta.tag.structure.input.void.html',
+        'meta.type.annotation',
+        'meta.embedded.block.github-actions-expression',
+        'storage.type.function.arrow',
+        'keyword.operator.type',
+        'meta.objectliteral.ts',
+        'punctuation',
+      ], v('punctuation')),
+      getRuleToken('', ['variable.parameter.function'], v('foreground')),
+
+      /* html */
+      getRuleToken('', [
+        'text.html.derivative',
+        'storage.modifier.package',
+        'storage.modifier.import',
+        'storage.type.java',
+      ], v('foreground')),
+      getRuleToken('', [
+        'punctuation.definition.string',
+        'punctuation.support.type.property-name',
+      ], v('string', '99')),
+
+      getRuleToken('', [
+        'support',
+      ], v('property')),
+
+      getRuleToken('', [
+        'property',
+        'meta.property-name',
+        'meta.object-literal.key',
+        'entity.name.tag.yaml',
+        'attribute.name',
+      ], v('property')),
+
+      getRuleToken('', [
+        'keyword.operator',
+        'keyword.operator.assignment.compound',
+        'meta.var.expr.ts',
+      ], v('operator')),
+
+      getRuleToken('', [
+        'invalid.broken',
+      ], paletteColor.red[7], 'italic'),
+
       {
         scope: 'invalid.deprecated',
         settings: {
@@ -353,7 +326,6 @@ export default function getTheme(options: GetThemeOptions) {
           'punctuation.definition.deleted',
         ],
         settings: {
-          background: paletteColor.red[0],
           foreground: paletteColor.red[7],
         },
       },
@@ -364,14 +336,12 @@ export default function getTheme(options: GetThemeOptions) {
           'punctuation.definition.inserted',
         ],
         settings: {
-          background: paletteColor.green[0],
           foreground: paletteColor.green[6],
         },
       },
       {
         scope: ['markup.changed', 'punctuation.definition.changed'],
         settings: {
-          background: paletteColor.orange[1],
           foreground: paletteColor.orange[6],
         },
       },
@@ -457,12 +427,6 @@ export default function getTheme(options: GetThemeOptions) {
           foreground: v('function'),
         },
       },
-      {
-        scope: ['invalid.illegal.unrecognized-tag.html'],
-        settings: {
-          fontStyle: 'normal',
-        },
-      },
       // new
       {
         name: '分号、逗号',
@@ -485,13 +449,6 @@ export default function getTheme(options: GetThemeOptions) {
         scope: ['keyword.control.at-rule'],
         settings: {
           foreground: paletteColor.blue[5],
-        },
-      },
-      {
-        name: 'this 关键字',
-        scope: ['variable.language.this'],
-        settings: {
-          foreground: paletteColor.blue[2],
         },
       },
       {

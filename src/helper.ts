@@ -30,7 +30,7 @@ function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export function getRuleToken(name: string, scope: string[], foreground: string, fontStyle?: string): VscodeTokenRule {
+export function getRuleToken(name: string, scope: string[] | string, foreground: string, fontStyle?: string): VscodeTokenRule {
   const settings: VscodeTokenRule['settings'] = {
     foreground,
   }

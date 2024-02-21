@@ -585,14 +585,6 @@ export class VscodeThemeColorGenerator {
       'editor.lineHighlightBackground': this.v('activeBackground'),
       'editorLineNumber.foreground': this.v('ignored'),
       'editorLineNumber.activeForeground': this.v('activeForeground'),
-      'editorIndentGuide.background': this.pick({
-        light: '#00000015',
-        dark: '#ffffff15',
-      }),
-      'editorIndentGuide.activeBackground': this.pick({
-        light: '#00000030',
-        dark: '#ffffff30',
-      }),
       'editorWhitespace.foreground': this.pick({
         light: '#00000015',
         dark: '#ffffff15',
@@ -619,7 +611,7 @@ export class VscodeThemeColorGenerator {
         dark: '#1c6b4810',
       }),
 
-      'editorCursor.foreground': this.v('primary'),
+      'editorCursor.foreground': this.v('secondary'),
       'editor.selectionHighlightBorder': this.pick({
         dark: '#ffffff3f',
         light: '#00000029',
@@ -707,7 +699,10 @@ export class VscodeThemeColorGenerator {
       // 高亮符号周围边框的背景颜色。
       'editor.symbolHighlightBorder': '',
       // 编辑器缩进指南的颜色 (1)。
-      'editorIndentGuide.background1': '',
+      'editorIndentGuide.background1': this.pick({
+        light: '#00000015',
+        dark: '#ffffff15',
+      }),
       // 编辑器缩进指南的颜色 (2)。
       'editorIndentGuide.background2': '',
       // 编辑器缩进指南的颜色 (3)。
@@ -719,7 +714,10 @@ export class VscodeThemeColorGenerator {
       // 编辑器缩进指南的颜色 (6)。
       'editorIndentGuide.background6': '',
       // 活动编辑器缩进指南的颜色 (1)。
-      'editorIndentGuide.activeBackground1': '',
+      'editorIndentGuide.activeBackground1': this.pick({
+        light: '#00000030',
+        dark: '#ffffff30',
+      }),
       // 活动编辑器缩进指南的颜色 (2)。
       'editorIndentGuide.activeBackground2': '',
       // 活动编辑器缩进指南的颜色 (3)。

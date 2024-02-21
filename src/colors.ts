@@ -1,8 +1,8 @@
 // [dark, light]
 export const themeColor = {
   // base
-  primary: ['#ff8787', '#f18080'],
-  secondary: ['#66b395', '#26966a'],
+  primary: ['#66b395', '#26966a'],
+  secondary: ['#ff8787', '#f18080'],
 
   foreground: ['#dbd7caee', '#393a34'],
   activeForeground: ['#bfbaaa', '#4e4f47'],
@@ -14,9 +14,9 @@ export const themeColor = {
 
   background: ['#121212', '#ffffff'],
   activeBackground: ['#181818', '#f7f7f7'],
-  selectionBackground: ['#eeeeee15', '#22222215'],
-  selectionBackgroundActive: ['#eeeeee15', '#22222215'],
-  selectionBackgroundInActive: ['#eeeeee08', '#22222208'],
+  selectionBackground: ['#e6cc7722', '#22222215'],
+  selectionBackgroundActive: ['#e6cc7722', '#22222215'],
+  selectionBackgroundInActive: ['#eeeeee08', '#e6cc7744'],
 
   // soft overrides
   softBackground: ['#222', '#F1F0E9'],
@@ -29,18 +29,18 @@ export const themeColor = {
   blackActiveBackground: '#121212',
   blackPunctuation: '#444444',
 
-  variable: ['#a0a5d6', '#6b588e'],
-  keyword: ['#ed9cc2', '#c05386'],
+  variable: ['#bd976a', '#b07d48'],
+  keyword: ['#4d9375', '#1e754f'],
   number: ['#f6c177', '#c7792b'],
   constant: ['#c77dbb', '#861194'],
   parameter: ['#a0a5d6', '#6b588e'],
-  function: ['#5fb5be', '#668f9a'],
-  string: ['#74ccaa', '#377961'],
-  class: ['#f3a580', '#b5855c'],
-  operator: ['#ffffff5f', '#0000005f'],
-  comment: ['#ffffff4f', '#0000004f'],
+  function: ['#80a665', '#59873a'],
+  string: ['#c98a7d', '#b56959'],
+  operator: ['#cb7676', '#ab5959'],
+  comment: ['#758575dd', '#a0ada0'],
+  class: ['#7f8ac7', '#5a6aa6'],
   decorators: ['#ffffff5f', '#0000005f'],
-  boolean: ['#4d9375', '#1e754f'],
+  boolean: ['#74ccaa', '#377961'],
   interface: ['#5d99a9', '#2e808f'],
   type: ['#5DA994', '#2e8f82'],
   builtin: ['#cb7676', '#ab5959'],

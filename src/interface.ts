@@ -1,6 +1,6 @@
 export interface VscodeTokenRule {
   name: string;
-  scope: string[];
+  scope: string[] | string;
   settings: {
     foreground?: string
     background?: string
@@ -902,11 +902,6 @@ export interface EditorColors {
    *  编辑器中空白字符的颜色。
    */
   'editorWhitespace.foreground': string,
-
-  /**
-   *  编辑器缩进指南的颜色。
-   */
-  'editorIndentGuide.background': string,
   /**
    *  编辑器缩进指南的颜色 (1)。
    */
@@ -931,10 +926,6 @@ export interface EditorColors {
    *  编辑器缩进指南的颜色 (6)。
    */
   'editorIndentGuide.background6': string,
-  /**
-   *  活动编辑器缩进指南的颜色。
-   */
-  'editorIndentGuide.activeBackground': string,
   /**
    *  活动编辑器缩进指南的颜色 (1)。
    */

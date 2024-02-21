@@ -61,17 +61,16 @@
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "test": "vsce package",
-    "release": "bumpp --all && vsce publish --no-dependencies",
-    "push": "vsce publish --no-dependencies"
+    "release": "vsce publish --no-dependencies"
   },
   "devDependencies": {
-    "@kriszu/eslint-config": "^3.1.9",
+    "@kriszu/eslint-config": "^3.1.16",
     "@types/color": "^3.0.6",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.11.9",
-    "@types/vscode": "~1.85.0",
+    "@types/node": "^20.11.19",
+    "@types/vscode": "~1.86.0",
     "color": "^4.2.3",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.20.1",
     "eslint": "^8.56.0",
     "esno": "^4.0.0",
     "fs-extra": "^11.2.0",

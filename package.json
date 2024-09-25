@@ -20,6 +20,7 @@
   ],
   "icon": "logo.png",
   "files": [
+    "LICENSE",
     "logo.png",
     "themes/*",
     "extra/*"

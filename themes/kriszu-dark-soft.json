@@ -114,7 +114,7 @@
     "editor.hoverHighlightBackground": "#ffffff10",
     "editorLink.activeForeground": "#66b395",
     "editorInlayHint.foreground": "#ffffff6f",
-    "editorInlayHint.background": "#ffffff10",
+    "editorInlayHint.background": "#292929",
     "editorBracketMatch.background": "#4d937520",
     "editorHint.foreground": "#15ac91",
     "editorOverviewRuler.border": "#ffffff",

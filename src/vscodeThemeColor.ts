@@ -631,10 +631,7 @@ export class VscodeThemeColorGenerator {
         dark: '#ffffff6f',
         light: this.v('secondary'),
       }),
-      'editorInlayHint.background': this.pick({
-        dark: '#ffffff10',
-        light: this.v('secondary', '2f'),
-      }),
+      'editorInlayHint.background': this.v('activeBackground'),
       'editorBracketMatch.background': this.pick({
         light: '#1c6b4820',
         dark: '#4d937520',

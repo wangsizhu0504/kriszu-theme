@@ -53,6 +53,7 @@ export default function getTheme(options: GetThemeOptions) {
       ], v('string')),
       /* Number */
       getRuleToken('Number', [
+        'keyword.operator.quantifier.regexp',
         'constant.numeric',
         'number',
       ], v('number')),
@@ -188,6 +189,7 @@ export default function getTheme(options: GetThemeOptions) {
         'keyword.operator.type.annotation',
         'keyword.operator.relational',
         'keyword.operator.assignment',
+        'keyword.operator.type',
         'meta.brace',
         'meta.tag.block.any.html',
         'meta.tag.inline.any.html',
@@ -195,7 +197,6 @@ export default function getTheme(options: GetThemeOptions) {
         'meta.type.annotation',
         'meta.embedded.block.github-actions-expression',
         'storage.type.function.arrow',
-        'keyword.operator.type',
         'meta.objectliteral.ts',
         'punctuation',
       ], v('punctuation')),
@@ -372,6 +373,7 @@ export default function getTheme(options: GetThemeOptions) {
 
       getRuleToken('', [
         'type.identifier',
+        'constant.other.character-class.regexp',
       ], v('class')),
 
       getRuleToken('', [

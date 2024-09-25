@@ -38,7 +38,7 @@ export const themeColor = {
   string: ['#c98a7d', '#b56959'],
   operator: ['#cb7676', '#ab5959'],
   comment: ['#758575dd', '#a0ada0'],
-  class: ['#7f8ac7', '#5a6aa6'],
+  class: ['#6872ab', '#5a6aa6'],
   decorators: ['#ffffff5f', '#0000005f'],
   boolean: ['#74ccaa', '#377961'],
   interface: ['#5d99a9', '#2e808f'],

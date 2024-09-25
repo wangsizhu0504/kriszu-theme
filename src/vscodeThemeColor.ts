@@ -889,14 +889,8 @@ export class VscodeThemeColorGenerator {
     return this.addColors<VSCodeColor.DiffEditorColors>({
 
       // 插入的文本的背景颜色。颜色不能是不透明的，以免隐藏底层装饰。
-      'diffEditor.insertedTextBackground': this.pick({
-        light: '#1c6b4815',
-        dark: '#4d937522',
-      }),
-      'diffEditor.removedTextBackground': this.pick({
-        light: '#ab595910',
-        dark: '#ab595922',
-      }),
+      'diffEditor.insertedTextBackground': this.pick({ light: '#1c6b4830', dark: '#4d937550' }),
+      'diffEditor.removedTextBackground': this.pick({ light: '#ab595940', dark: '#ab595950' }),
       'diffEditor.border': this.pick({
         light: '#0000001a',
         dark: '#ff878730',

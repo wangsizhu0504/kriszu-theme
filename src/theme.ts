@@ -99,6 +99,7 @@ export default function getTheme(options: GetThemeOptions) {
         'support.type.builtin',
         'constant.language.undefined',
         'constant.language.null',
+        'constant.language.import-export-all.ts',
       ], v('builtin')),
 
       getRuleToken('Modules', [
@@ -199,6 +200,8 @@ export default function getTheme(options: GetThemeOptions) {
         'storage.type.function.arrow',
         'meta.objectliteral.ts',
         'punctuation',
+        'punctuation.definition.string.begin.html.vue',
+        'punctuation.definition.string.end.html.vue',
       ], v('punctuation')),
       getRuleToken('', ['variable.parameter.function'], v('foreground')),
 
@@ -211,8 +214,10 @@ export default function getTheme(options: GetThemeOptions) {
       ], v('foreground')),
       getRuleToken('', [
         'punctuation.definition.string',
+      ], v('string', '77')),
+      getRuleToken('', [
         'punctuation.support.type.property-name',
-      ], v('string', '99')),
+      ], v('property', '77')),
 
       getRuleToken('', [
         'support',

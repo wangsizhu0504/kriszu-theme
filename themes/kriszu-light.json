@@ -45,7 +45,7 @@
     "list.activeSelectionBackground": "#f7f7f7",
     "list.activeSelectionForeground": "#393a34",
     "list.dropBackground": "#00000008",
-    "list.focusBackground": "#f7f7f7",
+    "list.focusBackground": "#ffffff",
     "list.focusHighlightForeground": "#f18080",
     "list.focusOutline": "#f18080",
     "list.highlightForeground": "#26966a",
@@ -101,9 +101,9 @@
     "editorWhitespace.foreground": "#00000015",
     "editor.findMatchBackground": "#e6cc7744",
     "editor.findMatchHighlightBackground": "#e6cc7766",
-    "editor.inactiveSelectionBackground": "#e6cc7744",
-    "editor.selectionBackground": "#22222215",
-    "editor.selectionHighlightBackground": "#e6cc7744",
+    "editor.inactiveSelectionBackground": "#22222210",
+    "editor.selectionBackground": "#22222218",
+    "editor.selectionHighlightBackground": "#22222210",
     "editor.wordHighlightBackground": "#1c6b4805",
     "editor.wordHighlightStrongBackground": "#1c6b4810",
     "editorCursor.foreground": "#f18080",
@@ -138,8 +138,8 @@
     "editorGutter.deletedBackground": "#ab5959",
     "editorGutter.commentRangeForeground": "#393a3450",
     "editorGutter.foldingControlForeground": "#393a3490",
-    "diffEditor.insertedTextBackground": "#1c6b4815",
-    "diffEditor.removedTextBackground": "#ab595910",
+    "diffEditor.insertedTextBackground": "#1c6b4830",
+    "diffEditor.removedTextBackground": "#ab595940",
     "diffEditor.border": "#0000001a",
     "diffEditor.diagonalFill": "#00000010",
     "diffEditor.insertedLineBackground": "#66b39530",
@@ -209,7 +209,7 @@
     "quickInputList.focusBackground": "#f7f7f7",
     "terminal.background": "#181818",
     "terminal.foreground": "#393a34",
-    "terminal.selectionBackground": "#22222215",
+    "terminal.selectionBackground": "#22222218",
     "terminal.ansiBrightBlack": "#aaaaaa",
     "terminal.ansiBrightBlue": "#7098d4",
     "terminal.ansiBrightCyan": "#2993a3",
@@ -243,7 +243,7 @@
     "breadcrumb.foreground": "#86909c",
     "breadcrumb.background": "#f7f7f7",
     "breadcrumb.focusForeground": "#393a34",
-    "breadcrumb.activeSelectionForeground": "#22222215",
+    "breadcrumb.activeSelectionForeground": "#22222218",
     "breadcrumbPicker.background": "#ffffff"
   },
   "semanticHighlighting": true,
@@ -273,6 +273,7 @@
     {
       "name": "Number",
       "scope": [
+        "keyword.operator.quantifier.regexp",
         "constant.numeric",
         "number"
       ],
@@ -353,7 +354,8 @@
         "storage.modifier",
         "support.type.builtin",
         "constant.language.undefined",
-        "constant.language.null"
+        "constant.language.null",
+        "constant.language.import-export-all.ts"
       ],
       "settings": {
         "foreground": "#ab5959"
@@ -563,6 +565,7 @@
         "keyword.operator.type.annotation",
         "keyword.operator.relational",
         "keyword.operator.assignment",
+        "keyword.operator.type",
         "meta.brace",
         "meta.tag.block.any.html",
         "meta.tag.inline.any.html",
@@ -570,9 +573,10 @@
         "meta.type.annotation",
         "meta.embedded.block.github-actions-expression",
         "storage.type.function.arrow",
-        "keyword.operator.type",
         "meta.objectliteral.ts",
-        "punctuation"
+        "punctuation",
+        "punctuation.definition.string.begin.html.vue",
+        "punctuation.definition.string.end.html.vue"
       ],
       "settings": {
         "foreground": "#999999"
@@ -602,11 +606,19 @@
     {
       "name": "",
       "scope": [
-        "punctuation.definition.string",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#b5695977"
+      }
+    },
+    {
+      "name": "",
+      "scope": [
         "punctuation.support.type.property-name"
       ],
       "settings": {
-        "foreground": "#b5695999"
+        "foreground": "#99841877"
       }
     },
     {
@@ -946,7 +958,8 @@
     {
       "name": "",
       "scope": [
-        "type.identifier"
+        "type.identifier",
+        "constant.other.character-class.regexp"
       ],
       "settings": {
         "foreground": "#5a6aa6"
@@ -1064,6 +1077,10 @@
       "foreground": "b56959"
     },
     {
+      "token": "keyword.operator.quantifier.regexp",
+      "foreground": "c7792b"
+    },
+    {
       "token": "constant.numeric",
       "foreground": "c7792b"
     },
@@ -1157,6 +1174,10 @@
     },
     {
       "token": "constant.language.null",
+      "foreground": "ab5959"
+    },
+    {
+      "token": "constant.language.import-export-all.ts",
       "foreground": "ab5959"
     },
     {
@@ -1344,6 +1365,10 @@
       "foreground": "999999"
     },
     {
+      "token": "keyword.operator.type",
+      "foreground": "999999"
+    },
+    {
       "token": "meta.brace",
       "foreground": "999999"
     },
@@ -1372,15 +1397,19 @@
       "foreground": "999999"
     },
     {
-      "token": "keyword.operator.type",
-      "foreground": "999999"
-    },
-    {
       "token": "meta.objectliteral.ts",
       "foreground": "999999"
     },
     {
       "token": "punctuation",
+      "foreground": "999999"
+    },
+    {
+      "token": "punctuation.definition.string.begin.html.vue",
+      "foreground": "999999"
+    },
+    {
+      "token": "punctuation.definition.string.end.html.vue",
       "foreground": "999999"
     },
     {
@@ -1405,11 +1434,11 @@
     },
     {
       "token": "punctuation.definition.string",
-      "foreground": "b5695999"
+      "foreground": "b5695977"
     },
     {
       "token": "punctuation.support.type.property-name",
-      "foreground": "b5695999"
+      "foreground": "99841877"
     },
     {
       "token": "support",
@@ -1641,6 +1670,10 @@
     },
     {
       "token": "type.identifier",
+      "foreground": "5a6aa6"
+    },
+    {
+      "token": "constant.other.character-class.regexp",
       "foreground": "5a6aa6"
     },
     {

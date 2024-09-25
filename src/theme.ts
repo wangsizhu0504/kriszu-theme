@@ -78,6 +78,7 @@ export default function getTheme(options: GetThemeOptions) {
       getRuleToken('Keywords', [
         'keyword',
         'storage.type.class.jsdoc ',
+        'punctuation.definition.template-expression',
         'modifier',
         'variable.language.this',
         'support.type.object',

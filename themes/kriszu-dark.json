@@ -320,6 +320,7 @@
       "scope": [
         "keyword",
         "storage.type.class.jsdoc ",
+        "punctuation.definition.template-expression",
         "modifier",
         "variable.language.this",
         "support.type.object"
@@ -1128,6 +1129,10 @@
     },
     {
       "token": "storage.type.class.jsdoc ",
+      "foreground": "4d9375"
+    },
+    {
+      "token": "punctuation.definition.template-expression",
       "foreground": "4d9375"
     },
     {

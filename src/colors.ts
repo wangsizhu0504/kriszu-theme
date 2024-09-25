@@ -14,9 +14,9 @@ export const themeColor = {
 
   background: ['#121212', '#ffffff'],
   activeBackground: ['#181818', '#f7f7f7'],
-  selectionBackground: ['#e6cc7722', '#22222215'],
-  selectionBackgroundActive: ['#e6cc7722', '#22222215'],
-  selectionBackgroundInActive: ['#eeeeee08', '#e6cc7744'],
+  selectionBackground: ['#eeeeee18', '#22222218'],
+  selectionBackgroundActive: ['#eeeeee18', '#22222218'],
+  selectionBackgroundInActive: ['#eeeeee10', '#22222210'],
 
   // soft overrides
   softBackground: ['#222', '#F1F0E9'],

@@ -20,8 +20,9 @@
   ],
   "icon": "logo.png",
   "files": [
-    "themes",
-    "extra"
+    "logo.png",
+    "themes/*",
+    "extra/*"
   ],
   "engines": {
     "vscode": "^1.43.0"

@@ -299,7 +299,7 @@ export class VscodeThemeColorGenerator {
         light: '#00000008',
       }),
       // 当列表/树处于活动状态时，聚焦项的背景颜色。
-      'list.focusBackground': this.v('activeBackground'),
+      'list.focusBackground': this.v('background'),
       // 当列表/树处于活动状态时，聚焦项的前景颜色。活动的列表/树具有键盘焦点，非活动的列表/树没有。
       'list.focusForeground': '',
       // 在列表/树内搜索时，活动聚焦项上匹配高亮的前景颜色。

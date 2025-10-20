@@ -1,6 +1,6 @@
-import type { Format } from '../utils'
-import { colorPalette } from './palette'
-import { colorPaletteDark } from './paletteDark'
+import type { Format } from '../utils';
+import { colorPalette } from './palette';
+import { colorPaletteDark } from './paletteDark';
 
 /**
  * @param {string} color
@@ -18,15 +18,15 @@ export function generate(color: string, options: {
   index?: number
   format?: Format
 } = {}) {
-  const { dark, list, index = 6, format = 'hex' } = options
+  const { dark, list, index = 6, format = 'hex' } = options;
 
   if (list) {
-    const colorList = []
-    const func = dark ? colorPaletteDark : colorPalette
+    const colorList = [];
+    const func = dark ? colorPaletteDark : colorPalette;
     for (let i = 1; i <= 10; i++)
-      colorList.push(func(color, i, format))
+      colorList.push(func(color, i, format));
 
-    return colorList
+    return colorList;
   }
-  return dark ? colorPaletteDark(color, index, format) : colorPalette(color, index, format)
+  return dark ? colorPaletteDark(color, index, format) : colorPalette(color, index, format);
 }

@@ -21,9 +21,9 @@
   "icon": "logo.png",
   "files": [
     "LICENSE",
+    "extra/*",
     "logo.png",
-    "themes/*",
-    "extra/*"
+    "themes/*"
   ],
   "engines": {
     "vscode": "^1.43.0"
@@ -68,16 +68,16 @@
     "pack": "vsce pack --no-dependencies"
   },
   "devDependencies": {
-    "@kriszu/eslint-config": "^3.2.12",
-    "@types/color": "^3.0.6",
+    "@kriszu/eslint-config": "^4.0.2",
+    "@types/color": "^4.2.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.16.7",
-    "@vscode/vsce": "^2.32.0",
-    "color": "^4.2.3",
-    "eslint": "^8.57.1",
-    "esno": "^4.7.0",
-    "fs-extra": "^11.2.0",
-    "typescript": "^5.6.2",
+    "@types/node": "^24.8.1",
+    "@vscode/vsce": "^3.6.2",
+    "color": "^5.0.2",
+    "eslint": "^9.38.0",
+    "esno": "^4.8.0",
+    "fs-extra": "^11.3.2",
+    "typescript": "^5.9.3",
     "xterm": "^5.3.0"
   }
 }

@@ -1,4 +1,4 @@
-import { generate } from './generate'
+import { generate } from './generate';
 
 const colorList: Record<string, string> = {
   red: '#F53F3F',
@@ -11,7 +11,7 @@ const colorList: Record<string, string> = {
   blue: '#165DFF',
   purple: '#722ED1',
   magenta: '#F5319D',
-}
+};
 
 const gray = [
   '#f7f8fa',
@@ -24,26 +24,26 @@ const gray = [
   '#4e5969',
   '#272e3b',
   '#1d2129',
-]
+];
 
 const palette: Record<string, {
   dark: string[]
   light: string[]
   primary: string
-}> = {}
+}> = {};
 Object.keys(colorList).forEach((key) => {
   palette[key] = {
     light: generate(colorList[key], { list: true }),
     dark: generate(colorList[key], { list: true, dark: true }),
     primary: colorList[key],
-  }
-})
+  };
+});
 
 palette.gray = {
   dark: gray,
   light: gray,
   primary: gray[5],
-}
+};
 export {
   palette,
-}
+};

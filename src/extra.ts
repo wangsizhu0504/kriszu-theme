@@ -1,12 +1,12 @@
-import type { ITheme } from 'xterm'
-import type { GetThemeOptions } from './helper'
-import { createThemeHelpers } from './helper'
+import type { ITheme } from 'xterm';
+import type { GetThemeOptions } from './helper';
+import { createThemeHelpers } from './helper';
 
 export function getXtermTheme(options: GetThemeOptions): ITheme {
   const {
     pick,
     v,
-  } = createThemeHelpers(options)
+  } = createThemeHelpers(options);
 
   return {
     background: v('background'),
@@ -30,5 +30,5 @@ export function getXtermTheme(options: GetThemeOptions): ITheme {
     red: v('red'),
     white: v('foreground'),
     yellow: v('yellow'),
-  }
+  };
 }

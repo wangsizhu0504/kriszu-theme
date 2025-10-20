@@ -1,5 +1,5 @@
-import { themeColor } from './colors'
-import type * as VSCodeColor from './interface'
+import type * as VSCodeColor from './interface';
+import { themeColor } from './colors';
 
 interface CreateThemeOptions {
   v: (...args: any[]) => string
@@ -7,21 +7,21 @@ interface CreateThemeOptions {
   palette: Record<string, any>
 }
 export class VscodeThemeColorGenerator {
-  private colors: Record<string, string>
-  private palette: Record<string, any>
-  private v: (...args: any[]) => string
-  private pick: (...args: any[]) => string
+  private colors: Record<string, string>;
+  private palette: Record<string, any>;
+  private v: (...args: any[]) => string;
+  private pick: (...args: any[]) => string;
 
   constructor(options: CreateThemeOptions) {
-    this.colors = {}
-    this.v = options.v
-    this.pick = options.pick
-    this.palette = options.palette
+    this.colors = {};
+    this.v = options.v;
+    this.pick = options.pick;
+    this.palette = options.palette;
   }
 
   addColors<T extends Record<string, any>>(colors: T): this {
-    this.colors = { ...this.colors, ...colors }
-    return this
+    this.colors = { ...this.colors, ...colors };
+    return this;
   }
 
   /**
@@ -32,8 +32,8 @@ export class VscodeThemeColorGenerator {
     this.addColors<VSCodeColor.ContrastColors>({
       contrastActiveBorder: '',
       contrastBorder: '',
-    })
-    return this
+    });
+    return this;
   }
 
   /**
@@ -68,8 +68,8 @@ export class VscodeThemeColorGenerator {
       'icon.foreground': '',
       // 可拖动分割条的悬停边框颜色。
       'sash.hoverBorder': this.v('primary'),
-    })
-    return this
+    });
+    return this;
   }
 
   /**
@@ -80,7 +80,7 @@ export class VscodeThemeColorGenerator {
     return this.addColors<VSCodeColor.WindowBorder>({
       'window.activeBorder': '',
       'window.inactiveBorder': '',
-    })
+    });
   }
 
   /**
@@ -106,7 +106,7 @@ export class VscodeThemeColorGenerator {
       'textPreformat.background': '',
       // 文本分隔符的颜色。
       'textSeparator.foreground': this.palette.gray[3],
-    })
+    });
   }
 
   /**
@@ -125,7 +125,7 @@ export class VscodeThemeColorGenerator {
       'toolbar.hoverOutline': '',
       // 鼠标按住工具栏操作时的背景颜色。
       'toolbar.activeBackground': '',
-    })
+    });
   }
 
   /**
@@ -164,7 +164,7 @@ export class VscodeThemeColorGenerator {
       'checkbox.selectBackground': '',
       // 当复选框所在的元素被选中时，复选框部件的边框颜色。
       'checkbox.selectBorder': '',
-    })
+    });
   }
 
   /**
@@ -182,7 +182,7 @@ export class VscodeThemeColorGenerator {
       'dropdown.border': this.v('border'),
       // 下拉菜单的前景颜色。
       'dropdown.foreground': this.v('foreground'),
-    })
+    });
   }
 
   /**
@@ -232,7 +232,7 @@ export class VscodeThemeColorGenerator {
       'inputValidation.warningForeground': '',
       // 警告严重性的输入验证边框颜色。
       'inputValidation.warningBorder': '',
-    })
+    });
   }
 
   /**
@@ -252,7 +252,7 @@ export class VscodeThemeColorGenerator {
       'scrollbarSlider.background': this.v('faded'),
       // 鼠标悬停时滚动条滑块的背景颜色。
       'scrollbarSlider.hoverBackground': this.v('ignored'),
-    })
+    });
   }
 
   /**
@@ -266,7 +266,7 @@ export class VscodeThemeColorGenerator {
       'badge.foreground': this.v('background'),
       // 徽章的背景颜色。
       'badge.background': this.v('secondaryForeground'),
-    })
+    });
   }
 
   /**
@@ -277,7 +277,7 @@ export class VscodeThemeColorGenerator {
     return this.addColors<VSCodeColor.ProgressBar>({
       // 长时间运行操作时显示的进度条的背景颜色。
       'progressBar.background': this.v('primary'),
-    })
+    });
   }
 
   /**
@@ -361,7 +361,7 @@ export class VscodeThemeColorGenerator {
       'tree.tableColumnsBorder': '',
       // 奇数行的表格背景颜色。
       'tree.tableOddRowsBackground': '',
-    })
+    });
   }
 
   /**
@@ -393,7 +393,7 @@ export class VscodeThemeColorGenerator {
       // 活动栏的背景颜色。
       'activityBar.background': this.v('background'),
 
-    })
+    });
   }
 
   /**
@@ -406,7 +406,7 @@ export class VscodeThemeColorGenerator {
       'profileBadge.background': '',
       // 配置徽章的前景颜色。配置徽章显示在活动栏中的设置齿轮图标顶部。
       'profileBadge.foreground': '',
-    })
+    });
   }
 
   /**
@@ -433,7 +433,7 @@ export class VscodeThemeColorGenerator {
       // 侧边栏部分标题的边框颜色。
       'sideBarSectionHeader.border': this.v('border'),
 
-    })
+    });
   }
 
   /**
@@ -491,7 +491,7 @@ export class VscodeThemeColorGenerator {
       'minimapGutter.modifiedBackground': '',
       // 删除内容的迷你地图边栏颜色。
       'minimapGutter.deletedBackground': '',
-    })
+    });
   }
 
   /**
@@ -569,7 +569,7 @@ export class VscodeThemeColorGenerator {
       // 当在编辑器组中水平排列时，用于将两个编辑器从左到右分开的颜色。
       'sideBySideEditor.verticalBorder': '',
 
-    })
+    });
   }
 
   /**
@@ -875,7 +875,7 @@ export class VscodeThemeColorGenerator {
       'editorCommentsWidget.rangeActiveBackground': '',
       // 评论回复输入框的背景颜色。
       'editorCommentsWidget.replyInputBackground': '',
-    })
+    });
   }
 
   /**
@@ -931,7 +931,7 @@ export class VscodeThemeColorGenerator {
       'diffEditor.moveActive.border': '',
       // 多重差异编辑器的标题背景颜色。
       'multiDiffEditor.headerBackground': '',
-    })
+    });
   }
 
   /**
@@ -1010,7 +1010,7 @@ export class VscodeThemeColorGenerator {
       'editorMarkerNavigationWarning.headerBackground': '',
       // 编辑器标记导航小部件信息标题背景颜色。
       'editorMarkerNavigationInfo.headerBackground': '',
-    })
+    });
   }
 
   /**
@@ -1054,7 +1054,7 @@ export class VscodeThemeColorGenerator {
       'peekViewTitleDescription.foreground': '',
       // peek 视图标题的前景色。
       'peekViewTitleLabel.foreground': '',
-    })
+    });
   }
 
   /**
@@ -1120,7 +1120,7 @@ export class VscodeThemeColorGenerator {
       'mergeEditor.conflict.input1.background': '',
       // 输入2的装饰背景颜色。
       'mergeEditor.conflict.input2.background': '',
-    })
+    });
   }
 
   /**
@@ -1157,7 +1157,7 @@ export class VscodeThemeColorGenerator {
       'panelSectionHeader.foreground': '',
       // 在面板中垂直堆叠多个视图时使用的面板部分标题边框颜色。面板显示在编辑器区域下方，包含输出和集成终端等视图。
       'panelSectionHeader.border': '',
-    })
+    });
   }
 
   /**
@@ -1243,7 +1243,7 @@ export class VscodeThemeColorGenerator {
       'statusBarItem.offlineHoverForeground': '',
       // 当工作台处于离线状态时，鼠标悬停时状态栏项的背景颜色。状态栏显示在窗口底部。
       'statusBarItem.offlineHoverBackground': '',
-    })
+    });
   }
 
   /**
@@ -1262,7 +1262,7 @@ export class VscodeThemeColorGenerator {
       'titleBar.inactiveBackground': this.v('background'), // 窗口非活动状态时的标题栏背景
       // 标题栏的边框颜色。
       'titleBar.border': this.v('activeBackground'), // 标题栏边框颜色
-    })
+    });
   }
 
   registerMenuColors() {
@@ -1293,7 +1293,7 @@ export class VscodeThemeColorGenerator {
       'menu.selectionBorder': '',
       // 菜单的边框颜色。
       'menu.border': '',
-    })
+    });
   }
 
   /**
@@ -1330,7 +1330,7 @@ export class VscodeThemeColorGenerator {
       }),
       // 当程序正在进行调试时的命令中心背景颜色。
       'commandCenter.debuggingBackground': '',
-    })
+    });
   }
 
   /**
@@ -1362,7 +1362,7 @@ export class VscodeThemeColorGenerator {
       'notificationToast.border': '',
       // 通知中链接的前景色。
       'notificationLink.foreground': '',
-    })
+    });
   }
 
   /**
@@ -1383,7 +1383,7 @@ export class VscodeThemeColorGenerator {
       }),
       // Banner文本前面图标的颜色。
       'banner.iconForeground': '',
-    })
+    });
   }
 
   /**
@@ -1417,7 +1417,7 @@ export class VscodeThemeColorGenerator {
       'extensionIcon.preReleaseForeground': '',
       // Extension赞助商图标的颜色。
       'extensionIcon.sponsorForeground': '',
-    })
+    });
   }
 
   /**
@@ -1441,7 +1441,7 @@ export class VscodeThemeColorGenerator {
       'quickInputList.focusIconForeground': '',
       // 快速选择器标题的背景颜色。快速选择器小部件是命令面板等选择器的容器。
       'quickInputTitle.background': '',
-    })
+    });
   }
 
   registerKeybindingLabel() {
@@ -1455,7 +1455,7 @@ export class VscodeThemeColorGenerator {
       // 快捷键标签的底部边框颜色。快捷键标签用于表示键盘快捷键。
       'keybindingLabel.bottomBorder': '',
 
-    })
+    });
   }
 
   /**
@@ -1468,7 +1468,7 @@ export class VscodeThemeColorGenerator {
       'keybindingTable.headerBackground': '',
       // 键盘快捷键表格交替行的背景颜色。
       'keybindingTable.rowsBackground': '',
-    })
+    });
   }
 
   /**
@@ -1544,7 +1544,7 @@ export class VscodeThemeColorGenerator {
       'terminalStickyScroll.background': '',
       // 终端中悬停时粘性滚动叠加层的背景颜色。
       'terminalStickyScrollHover.background': '',
-    })
+    });
   }
 
   /**
@@ -1593,7 +1593,7 @@ export class VscodeThemeColorGenerator {
       'debugTokenExpression.number': '',
       // 在调试视图中表达式错误的前景颜色。
       'debugTokenExpression.error': '',
-    })
+    });
   }
 
   /**
@@ -1628,7 +1628,7 @@ export class VscodeThemeColorGenerator {
       'testing.message.info.decorationForeground': '',
       // 在编辑器中显示的测试信息消息旁边的边距颜色。
       'testing.message.info.lineBackground': '',
-    })
+    });
   }
 
   /**
@@ -1654,7 +1654,7 @@ export class VscodeThemeColorGenerator {
       'walkThrough.embeddedEditorBackground': '',
       // 演练步骤标题的前景颜色。
       'walkthrough.stepTitle.foreground': '',
-    })
+    });
   }
 
   /**
@@ -1686,7 +1686,7 @@ export class VscodeThemeColorGenerator {
       'gitDecoration.stageModifiedResourceForeground': '',
       // 暂存的删除 Git 资源的颜色。用于文件标签和 SCM 视图。
       'gitDecoration.stageDeletedResourceForeground': '',
-    })
+    });
   }
 
   /**
@@ -1736,7 +1736,7 @@ export class VscodeThemeColorGenerator {
       'settings.sashBorder': '',
       // 部分标题或悬停标题的前景颜色。
       'settings.settingsHeaderHoverForeground': '',
-    })
+    });
   }
 
   /**
@@ -1756,7 +1756,7 @@ export class VscodeThemeColorGenerator {
       // 面包屑导航项选择器的背景颜色。
       'breadcrumbPicker.background': this.v('background'),
 
-    })
+    });
   }
 
   /**
@@ -1773,7 +1773,7 @@ export class VscodeThemeColorGenerator {
       'editor.snippetFinalTabstopHighlightBackground': '',
       // Snippet 最后一个 tabstop 的高亮边框颜色。
       'editor.snippetFinalTabstopHighlightBorder': '',
-    })
+    });
   }
 
   /**
@@ -1848,7 +1848,7 @@ export class VscodeThemeColorGenerator {
       'symbolIcon.unitForeground': '',
       // 变量符号的前景颜色。
       'symbolIcon.variableForeground': '',
-    })
+    });
   }
 
   /**
@@ -1897,7 +1897,7 @@ export class VscodeThemeColorGenerator {
       'debugConsole.sourceForeground': '',
       // 调试控制台输入标记图标的前景颜色。
       'debugConsoleInputIcon.foreground': '',
-    })
+    });
   }
 
   /**
@@ -1954,7 +1954,7 @@ export class VscodeThemeColorGenerator {
       'notebookStatusSuccessIcon.foreground': '',
       // 笔记本编辑器概览标尺中正在运行单元格装饰的颜色。
       'notebookEditorOverviewRuler.runningCellForeground': '',
-    })
+    });
   }
 
   /**
@@ -1979,7 +1979,7 @@ export class VscodeThemeColorGenerator {
       'charts.green': '',
       // 图表中紫色元素的颜色。
       'charts.purple': '',
-    })
+    });
   }
 
   /**
@@ -1990,7 +1990,7 @@ export class VscodeThemeColorGenerator {
     return this.addColors<VSCodeColor.PortsColors>({
       // 具有关联运行进程的端口图标的颜色。
       'ports.iconRunningProcessForeground': '',
-    })
+    });
   }
 
   /**
@@ -2003,7 +2003,7 @@ export class VscodeThemeColorGenerator {
       'commentsView.resolvedIcon': '',
       // 未解决评论的图标颜色。
       'commentsView.unresolvedIcon': '',
-    })
+    });
   }
 
   /**
@@ -2015,7 +2015,7 @@ export class VscodeThemeColorGenerator {
       // 操作栏中已切换动作项的背景颜色。
       'actionBar.toggledBackground': '',
 
-    })
+    });
   }
 
   /**
@@ -2026,7 +2026,7 @@ export class VscodeThemeColorGenerator {
     return this.addColors<VSCodeColor.SimpleFindWidget>({
       // 闪电小部件边框的边框颜色。
       'simpleFindWidget.sashBorder': '',
-    })
+    });
   }
 
   /**
@@ -2043,7 +2043,7 @@ export class VscodeThemeColorGenerator {
       'scm.historyItemStatisticsBorder': '',
       // SCM（源代码管理）历史记录项被选中的统计边框的颜色。
       'scm.historyItemSelectedStatisticsBorder': '',
-    })
+    });
   }
 
   buildColor() {
@@ -2096,16 +2096,16 @@ export class VscodeThemeColorGenerator {
       .registerCommentsViewColors()
       .registerActionBarColors()
       .registerSimpleFindWidget()
-      .registerSCM()
+      .registerSCM();
     return Object.keys(this.colors).reduce((prev, key) => {
       if (this.colors[key])
-        prev[key] = this.colors[key]
+        prev[key] = this.colors[key];
 
-      return prev
-    }, {} as Record<string, string>)
+      return prev;
+    }, {} as Record<string, string>);
   }
 
   getColors() {
-    return this.colors
+    return this.colors;
   }
 }

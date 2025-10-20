@@ -1,19 +1,19 @@
-import type { GetThemeOptions } from './helper'
-import { createThemeHelpers, getRuleToken } from './helper'
-import { toArray } from './utils'
-import { VscodeThemeColorGenerator } from './vscodeThemeColor'
+import type { GetThemeOptions } from './helper';
+import { createThemeHelpers, getRuleToken } from './helper';
+import { toArray } from './utils';
+import { VscodeThemeColorGenerator } from './vscodeThemeColor';
 
 export default function getTheme(options: GetThemeOptions) {
   const {
     pick,
     v,
     paletteColor,
-  } = createThemeHelpers(options)
+  } = createThemeHelpers(options);
   const themeColors = new VscodeThemeColorGenerator({
     v,
     pick,
     palette: paletteColor,
-  })
+  });
   // https://code.visualstudio.com/api/references/theme-color
   const theme = {
     $schema: 'vscode://schemas/color-theme',
@@ -440,21 +440,21 @@ export default function getTheme(options: GetThemeOptions) {
       },
     ],
     rules: [],
-  }
+  };
 
   // monaco rules
-  const rules: any[] = []
+  const rules: any[] = [];
 
   theme.tokenColors.forEach(({ scope, settings }: any) => {
     for (const s of toArray(scope)) {
       rules.push({
         token: s,
         foreground: settings.foreground?.replace('#', ''),
-      })
+      });
     }
-  })
+  });
 
-  theme.rules = rules as any
+  theme.rules = rules as any;
 
-  return theme
+  return theme;
 }

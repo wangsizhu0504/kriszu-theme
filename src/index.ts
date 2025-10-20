@@ -1,7 +1,7 @@
-import process from 'node:process'
-import fs from 'fs-extra'
-import getTheme from './theme'
-import { getXtermTheme } from './extra'
+import process from 'node:process';
+import fs from 'fs-extra';
+import { getXtermTheme } from './extra';
+import getTheme from './theme';
 
 fs.mkdir('./themes', { recursive: true })
   .then(() => Promise.all([
@@ -40,7 +40,7 @@ fs.mkdir('./themes', { recursive: true })
       { spaces: 2 },
     ),
   ]))
-  .catch(() => process.exit(1))
+  .catch(() => process.exit(1));
 
 fs.mkdir('./extra', { recursive: true })
   .then(() => Promise.all([
@@ -70,4 +70,4 @@ fs.mkdir('./extra', { recursive: true })
       { spaces: 2 },
     ),
   ]))
-  .catch(() => process.exit(1))
+  .catch(() => process.exit(1));

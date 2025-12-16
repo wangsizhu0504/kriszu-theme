@@ -1,7 +1,7 @@
 // [dark, light]
 export const themeColor = {
   // base
-  primary: ['#66b395', '#26966a'],
+  primary: ['#4d9375', '#1c6b48'],
   secondary: ['#ff8787', '#f18080'],
 
   foreground: ['#dbd7caee', '#393a34'],

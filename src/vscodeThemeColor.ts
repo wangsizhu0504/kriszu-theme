@@ -1132,7 +1132,7 @@ export class VscodeThemeColorGenerator {
       // 面板的背景颜色。
       'panel.background': this.v('background'),
       // 用于将面板与编辑器分隔开的面板边框颜色。
-      'panel.border': this.v('border'),
+      'panel.border': this.v('primary'),
       // 活动面板标题的边框颜色。
       'panelTitle.activeBorder': this.v('primary'),
       // 活动面板的标题颜色。

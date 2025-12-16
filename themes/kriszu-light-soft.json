@@ -10,18 +10,18 @@
     "selection.background": "#26966a4f",
     "descriptionForeground": "#393a3490",
     "errorForeground": "#ab5959",
-    "sash.hoverBorder": "#26966a",
+    "sash.hoverBorder": "#1c6b48",
     "textBlockQuote.background": "#F1F0E9",
     "textBlockQuote.border": "#E7E5DB",
     "textCodeBlock.background": "#F1F0E9",
-    "textLink.activeForeground": "#26966a",
-    "textLink.foreground": "#26966a",
+    "textLink.activeForeground": "#1c6b48",
+    "textLink.foreground": "#1c6b48",
     "textPreformat.foreground": "#6b7785",
     "textSeparator.foreground": "#c9cdd4",
     "toolbar.hoverBackground": "#00000010",
-    "button.background": "#26966a",
+    "button.background": "#1c6b48",
     "button.foreground": "#F1F0E9",
-    "button.hoverBackground": "#26966a",
+    "button.hoverBackground": "#1c6b48",
     "checkbox.background": "#E7E5DB",
     "checkbox.border": "#c9cdd4",
     "dropdown.background": "#F1F0E9",
@@ -41,14 +41,14 @@
     "scrollbarSlider.hoverBackground": "#393a3450",
     "badge.foreground": "#F1F0E9",
     "badge.background": "#393a3490",
-    "progressBar.background": "#26966a",
+    "progressBar.background": "#1c6b48",
     "list.activeSelectionBackground": "#E7E5DB",
     "list.activeSelectionForeground": "#393a34",
     "list.dropBackground": "#00000008",
     "list.focusBackground": "#F1F0E9",
     "list.focusHighlightForeground": "#f18080",
     "list.focusOutline": "#f18080",
-    "list.highlightForeground": "#26966a",
+    "list.highlightForeground": "#1c6b48",
     "list.hoverBackground": "#E7E5DB",
     "list.hoverForeground": "#393a34",
     "list.inactiveSelectionBackground": "#E7E5DB",
@@ -62,7 +62,7 @@
     "activityBar.border": "#E7E5DB",
     "activityBarBadge.background": "#4e4f47",
     "activityBarBadge.foreground": "#F1F0E9",
-    "activityBar.activeBorder": "#26966a",
+    "activityBar.activeBorder": "#1c6b48",
     "activityBar.background": "#F1F0E9",
     "sideBar.background": "#F1F0E9",
     "sideBar.foreground": "#4e4f47",
@@ -112,7 +112,7 @@
     "editor.findMatchBorder": "#f18080",
     "searchEditor.findMatchBorder": "#f18080",
     "editor.hoverHighlightBackground": "#00000010",
-    "editorLink.activeForeground": "#26966a",
+    "editorLink.activeForeground": "#1c6b48",
     "editorInlayHint.foreground": "#f18080",
     "editorInlayHint.background": "#E7E5DB",
     "editorBracketMatch.background": "#1c6b4820",
@@ -160,8 +160,8 @@
     "merge.incomingHeaderBackground": "#7098d47f",
     "merge.incomingContentBackground": "#7098d43f",
     "panel.background": "#F1F0E9",
-    "panel.border": "#E7E5DB",
-    "panelTitle.activeBorder": "#26966a",
+    "panel.border": "#1c6b48",
+    "panelTitle.activeBorder": "#1c6b48",
     "panelTitle.activeForeground": "#393a34",
     "panelTitle.inactiveForeground": "#86909c",
     "panelInput.border": "#e5e6eb",
@@ -239,7 +239,7 @@
     "gitDecoration.submoduleResourceForeground": "#393a3490",
     "gitDecoration.renamedResourceForeground": "#6ab8c0",
     "settings.headerForeground": "#393a34",
-    "settings.modifiedItemIndicator": "#26966a",
+    "settings.modifiedItemIndicator": "#1c6b48",
     "breadcrumb.foreground": "#86909c",
     "breadcrumb.background": "#E7E5DB",
     "breadcrumb.focusForeground": "#393a34",
@@ -770,7 +770,7 @@
         "meta.module-reference"
       ],
       "settings": {
-        "foreground": "#26966a"
+        "foreground": "#1c6b48"
       }
     },
     {
@@ -789,7 +789,7 @@
         "markup.heading entity.name"
       ],
       "settings": {
-        "foreground": "#26966a",
+        "foreground": "#1c6b48",
         "fontStyle": "bold"
       }
     },
@@ -828,7 +828,7 @@
         "markup.raw"
       ],
       "settings": {
-        "foreground": "#26966a"
+        "foreground": "#1c6b48"
       }
     },
     {
@@ -1539,7 +1539,7 @@
     },
     {
       "token": "meta.module-reference",
-      "foreground": "26966a"
+      "foreground": "1c6b48"
     },
     {
       "token": "punctuation.definition.list.begin.markdown",
@@ -1547,11 +1547,11 @@
     },
     {
       "token": "markup.heading",
-      "foreground": "26966a"
+      "foreground": "1c6b48"
     },
     {
       "token": "markup.heading entity.name",
-      "foreground": "26966a"
+      "foreground": "1c6b48"
     },
     {
       "token": "markup.quote",
@@ -1567,7 +1567,7 @@
     },
     {
       "token": "markup.raw",
-      "foreground": "26966a"
+      "foreground": "1c6b48"
     },
     {
       "token": "markup.deleted",
